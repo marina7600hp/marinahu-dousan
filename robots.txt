@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marinahu-dousan.marina-oomori1.workers.dev/sitemap.xml
