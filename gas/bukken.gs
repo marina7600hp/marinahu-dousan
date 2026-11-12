@@ -183,7 +183,8 @@ function parseListing_(html, url) {
 
   // 物件名
   let title = meta('og:title') || ((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
-  title = decodeEntities_(title).split(/\s*[|｜]\s*/)[0].replace(/【[^】]*(SUUMO|スーモ|スマイミー)[^】]*】/g, '').trim();
+  title = decodeEntities_(title).split(/\s*[|｜]\s*/)[0].replace(/【[^】]*(SUUMO|スーモ|スマイミー)[^】]*】/g, '');
+  title = title.split('／')[0].replace(/（[^（）]*提供）/g, '').trim();
 
   // 価格・賃料
   const yen = '([0-9０-９][0-9０-９,，.．]*\\s*(?:億\\s*[0-9０-９,，]*\\s*)?万円)';
@@ -206,8 +207,9 @@ function parseListing_(html, url) {
   address = address.replace(/(地図を見る|周辺環境).*$/, '');
 
   // 間取り
-  const layout = ((text.match(/間取り\s*[:：]?\s*([1-9１-９][SLDKＳＬＤＫ+＋]{1,6}|ワンルーム)/) ||
-    text.match(/(?:^|[^A-Z0-9])([1-9][SLDK]{1,5}|ワンルーム)(?:[^A-Z]|$)/)) || [])[1] || '';
+  const LAYOUT = '([1-9１-９][SLDKＳＬＤＫ]{1,5}(?:[+＋][SＳ](?:（納戸）)?)?|ワンルーム)';
+  const layout = ((text.match(new RegExp('間取り\\s*(?:ヒント\\s*)?[:：]?\\s*' + LAYOUT)) ||
+    text.match(new RegExp('(?:^|[^A-Z0-9])' + LAYOUT + '(?:[^A-Z]|$)'))) || [])[1] || '';
 
   // 面積（建物・専有 → 土地 の順で探す）
   const areaOf = (label) => {
@@ -221,6 +223,7 @@ function parseListing_(html, url) {
 
   // 写真
   let image = meta('og:image');
+  if (!image) image = findPhoto_(html);
   if (image && !/^https?:/i.test(image)) {
     try { image = new URL(image, url).href; } catch (e) { image = ''; }
   }
@@ -234,6 +237,16 @@ function parseListing_(html, url) {
     area: area,
     image: image,
   };
+}
+
+/** og:image がないページ用：本文中の物件写真らしき画像を探す（SUUMOは rel / data-src に写真URLがある） */
+function findPhoto_(html) {
+  const urls = [];
+  const re = /(?:src|data-src|data-original|data-lazy|rel)=["'](https?:\/\/[^"']+?\.(?:jpe?g|png|webp)[^"']*|https?:\/\/[^"']*resizeImage[^"']*)["']/gi;
+  let m;
+  while ((m = re.exec(html)) && urls.length < 50) urls.push(decodeEntities_(m[1]));
+  const isPhoto = (u) => !/logo|icon|banner|btn|button|sprite|common|kaisha/i.test(u);
+  return urls.find((u) => /bukken/i.test(u) && isPhoto(u)) || urls.find(isPhoto) || '';
 }
 
 function decodeEntities_(s) {
