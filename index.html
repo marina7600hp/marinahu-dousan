@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Search Console の認証タグは、発行された文字列を content に入れてから有効にしてください
+    <!-- Google Search Console の認証コードを content に入れてから有効にしてください
     <meta name="google-site-verification" content="ここに認証コード" />
     -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>呉市の空き家管理・不動産売却・空き家買取｜有限会社仁方大森マリーナー</title>
-    <meta name="description" content="呉市の空き家管理は月額3,300円から。月1回の巡回・換気・通水と写真付き報告書で、離れて暮らすご実家を見守ります。売却・買取・賃貸管理・駐車場活用のご相談も、貸主業35年以上の有限会社仁方大森マリーナーへ。">
+    <!-- SEO -->
     <link rel="canonical" href="https://marinahu-dousan.marina-oomori1.workers.dev/">
+    <meta name="description" content="呉市で不動産売却・空き家管理・空き家買取・賃貸管理・倉庫・工場・事業用土地のご相談なら有限会社仁方大森マリーナー。35年以上の貸主経験を活かし最適なご提案をいたします。">
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#0369a1">
 
     <!-- OGP（LINE・SNSで共有されたときの表示） -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="有限会社 仁方大森マリーナー">
-    <meta property="og:title" content="呉市の空き家管理・不動産売却・空き家買取｜有限会社仁方大森マリーナー">
-    <meta property="og:description" content="月額3,300円から。月1回の巡回・換気・通水と写真付き報告書で、離れて暮らすご実家を見守ります。">
+    <meta property="og:title" content="呉市の不動産売却・空家買取・倉庫・工場・賃貸管理 | 有限会社仁方大森マリーナー">
+    <meta property="og:description" content="空き家管理・空き家再生・空き家買取から、売買・賃貸管理・駐車場活用まで。貸主業35年以上の地域密着の不動産会社です。">
     <meta property="og:url" content="https://marinahu-dousan.marina-oomori1.workers.dev/">
     <meta property="og:image" content="https://marinahu-dousan.marina-oomori1.workers.dev/images/ogp.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- 構造化データ（Googleに会社情報・料金を正しく伝える） -->
+    <!-- 構造化データ（Googleに会社情報を正しく伝える） -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -38,31 +36,18 @@
         "url": "https://marinahu-dousan.marina-oomori1.workers.dev/",
         "image": "https://marinahu-dousan.marina-oomori1.workers.dev/images/ogp.jpg",
         "telephone": "+81-823-27-7600",
-        "address": {
-            "@type": "PostalAddress",
-            "postalCode": "737-0821",
-            "addressRegion": "広島県",
-            "addressLocality": "呉市",
-            "streetAddress": "三条4-7-20-2F",
-            "addressCountry": "JP"
-        },
-        "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:30",
-            "closes": "17:00"
-        }],
-        "areaServed": { "@type": "City", "name": "呉市" },
-        "makesOffer": [
-            { "@type": "Offer", "name": "空き家管理 屋内確認プラン（月1回・約30分）", "price": "3300", "priceCurrency": "JPY" },
-            { "@type": "Offer", "name": "空き家管理 標準プラン（月1回・約60分）", "price": "6600", "priceCurrency": "JPY" },
-            { "@type": "Offer", "name": "空き家管理 マンションプラン（月1回・約40分）", "price": "3300", "priceCurrency": "JPY" }
-        ]
+        "address": { "@type": "PostalAddress", "postalCode": "737-0821", "addressRegion": "広島県", "addressLocality": "呉市", "streetAddress": "三条4-7-20-2F", "addressCountry": "JP" },
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:30", "closes": "17:00" }],
+        "areaServed": { "@type": "City", "name": "呉市" }
     }
     </script>
 
+    <title>呉市の不動産売却・空家買取・倉庫・工場・賃貸管理 | 有限会社仁方大森マリーナー</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         tailwind.config = {
             theme: {
@@ -75,26 +60,20 @@
                             emerald: '#0d9488',
                             dark: '#0369a1',
                             ocean: '#0f172a'
-                        },
-                        cta: {
-                            DEFAULT: '#c2410c',
-                            dark: '#9a3412',
-                            light: '#fff7ed'
                         }
                     },
                     fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif']
+                        serif: ['Playfair Display', 'Noto Serif JP', 'serif'],
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
@@ -104,859 +83,103 @@
         .serif-text {
             font-family: 'Noto Serif JP', serif;
         }
-        section[id] {
-            scroll-margin-top: 5rem;
-        }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .faq-icon { transform: rotate(45deg); }
     </style>
 </head>
-<body id="top" class="overflow-x-hidden pb-20 lg:pb-0 selection:bg-miyako/10 selection:text-miyako-dark">
+<body class="overflow-x-hidden selection:bg-miyako/10 selection:text-miyako-dark">
 
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-4">
-            <a href="#top" class="flex flex-col shrink-0">
-                <span class="text-[10px] sm:text-xs tracking-[0.25em] text-miyako-dark font-bold">NIGATA MARINA</span>
-                <span class="text-base sm:text-lg font-bold serif-text tracking-wide text-slate-800">有限会社 仁方大森マリーナー</span>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col group">
+                <span class="text-xs tracking-[0.25em] text-miyako-dark font-bold">NIGATA MARINA</span>
+                <span class="text-lg font-bold serif-text tracking-wide text-slate-800">有限会社 仁方大森マリーナー</span>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-7" aria-label="メインメニュー">
-                <a href="#akiya" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">空き家管理</a>
-                <a href="#plans" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">料金プラン</a>
-                <a href="#saisei" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">再生・賃貸</a>
-                <a href="kaitori.html" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">空き家買取</a>
-                <a href="#faq" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">よくある質問</a>
-                <a href="#profile" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">会社概要</a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-miyako transition-colors">私たちの想い</a>
+                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-miyako transition-colors">事業内容</a>
+                <a href="#akiya-services" class="text-sm font-medium text-slate-600 hover:text-miyako transition-colors">空き家サービス</a>
+                <a href="#properties" class="text-sm font-medium text-slate-600 hover:text-miyako transition-colors">物件案内</a>
+                <a href="#profile" class="text-sm font-medium text-slate-600 hover:text-miyako transition-colors">会社概要</a>
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-miyako hover:bg-miyako-dark transition-all rounded-full shadow-sm">お問い合わせ</a>
             </nav>
 
-            <div class="hidden lg:flex items-center gap-5">
-                <div class="hidden xl:flex flex-col text-right leading-tight">
-                    <a href="tel:0823277600" class="text-lg font-bold text-miyako-dark hover:text-miyako transition-colors">
-                        <i class="fa-solid fa-phone mr-1 text-base"></i>0823-27-7600
-                    </a>
-                    <span class="text-[11px] text-slate-500">9:30〜17:00 / 日曜・祝日定休</span>
-                </div>
-                <a href="#contact" data-topic="空き家管理" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-cta hover:bg-cta-dark transition-colors rounded-full shadow-sm">
-                    無料相談・お問い合わせ
+            <div class="hidden md:flex flex-col text-right lg:hidden xl:flex">
+                <span class="text-xs text-slate-500">お電話でのお問い合わせ</span>
+                <a href="tel:0823277600" class="text-lg font-bold text-miyako-dark hover:text-miyako transition-colors">
+                    <i class="fa-solid fa-phone mr-1"></i>0823-27-7600
                 </a>
+                <span class="text-[10px] text-slate-400">9:30〜17:00 / 日曜祝日定休</span>
             </div>
 
-            <button id="menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-miyako-dark focus:outline-none" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-miyako focus:outline-none" aria-label="メニューを開く">
                 <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
             </button>
         </div>
 
         <!-- MOBILE NAV MENU -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-6 shadow-lg absolute w-full left-0">
-            <a href="#akiya" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家管理</a>
-            <a href="#plans" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">料金プラン</a>
-            <a href="#flow" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">ご利用の流れ</a>
-            <a href="#saisei" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家再生・賃貸活用</a>
-            <a href="kaitori.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家買取</a>
-            <a href="#faq" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">よくある質問</a>
-            <a href="#services" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">その他の事業</a>
-            <a href="#profile" class="block py-3 text-base font-medium text-slate-700">会社概要・アクセス</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-4 pb-6 space-y-3 shadow-lg absolute w-full left-0 transition-all duration-300">
+            <a href="#about" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">私たちの想い</a>
+            <a href="#services" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">事業内容</a>
+            <a href="#akiya-services" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">空き家サービス（管理・再生・買取）</a>
+            <a href="#properties" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">物件案内</a>
+            <a href="#profile" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">会社概要</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3">
+                <a href="tel:0823277600" class="flex items-center justify-center py-3 bg-slate-50 text-slate-800 rounded-md font-bold">
+                    <i class="fa-solid fa-phone mr-2 text-miyako"></i>0823-27-7600
+                </a>
+                <a href="#contact" class="flex items-center justify-center py-3 bg-miyako text-white rounded-md font-medium shadow-sm">
+                    お問い合わせフォーム
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-    <!-- HERO -->
-    <section class="relative pt-24 lg:pt-28 pb-14 md:pb-20 bg-slate-50 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-tr from-sky-50 via-white to-teal-50 opacity-90"></div>
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] pt-20 flex items-center bg-slate-50 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-tr from-sky-50 via-white to-teal-50 opacity-90 z-0"></div>
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-miyako-light rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl opacity-50"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                    <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-miyako/30 text-miyako-dark text-sm font-bold shadow-sm">
-                        <i class="fa-solid fa-house-circle-check"></i>呉市の空き家管理サービス
-                    </p>
-                    <h1 class="text-[1.75rem] sm:text-4xl xl:text-5xl font-bold leading-[1.45] text-slate-900 serif-text">
-                        離れて暮らす<br>
-                        実家の空き家、<br>
-                        <span class="text-miyako-dark">呉の大家</span>が見守ります。
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-4 space-y-6 sm:space-y-8 text-center lg:text-left">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.4] text-slate-900 tracking-tight serif-text">
+                        空家も<br>
+                        収益物件も。<br>
+                        不動産の悩みに、答えを。
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        月1回の巡回・換気・通水と、写真付きの報告書。<br class="hidden sm:inline">
-                        売却・買取・賃貸・駐車場活用のご相談まで、貸主業35年以上の私たちにお任せください。
+                    <p class="text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        空き家や相続不動産のご売却から、収益物件の運営・管理まで。
+                        貸主業35年以上。私たちは仲介会社である前に、自ら不動産を所有し、経営してきたオーナーでもあります。
+                        だからこそ、数字だけでは語れないオーナー様の悩みや不安を深く理解し、机上の理論ではない実践的なご提案が可能です。
+                        地域に根ざした総合不動産会社として、不動産の価値を守り、次の世代へとつなぐお手伝いをいたします。
                     </p>
-
-                    <ul class="grid grid-cols-3 gap-2 sm:gap-3 max-w-xl mx-auto lg:mx-0">
-                        <li class="bg-white rounded-2xl border border-slate-100 shadow-sm px-2 py-3 text-center">
-                            <span class="block text-xs text-slate-500">管理料</span>
-                            <span class="block text-lg sm:text-2xl font-bold text-cta leading-tight">月3,300<span class="text-xs sm:text-sm">円〜</span></span>
-                            <span class="block text-[11px] text-slate-500">（税込）</span>
-                        </li>
-                        <li class="bg-white rounded-2xl border border-slate-100 shadow-sm px-2 py-3 text-center">
-                            <span class="block text-xs text-slate-500">毎回お届け</span>
-                            <span class="block text-sm sm:text-base font-bold text-slate-900 leading-tight mt-1">写真付き<br>報告書</span>
-                        </li>
-                        <li class="bg-white rounded-2xl border border-slate-100 shadow-sm px-2 py-3 text-center">
-                            <span class="block text-xs text-slate-500">いつでも</span>
-                            <span class="block text-sm sm:text-base font-bold text-slate-900 leading-tight mt-1">解約金<br>なし</span>
-                        </li>
-                    </ul>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
-                        <a href="#contact" data-topic="空き家管理" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-cta hover:bg-cta-dark text-white text-lg font-bold rounded-full shadow-md hover:shadow-lg transition-all">
-                            無料で相談する<i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-miyako hover:bg-miyako-dark text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all">
+                            査定・ご相談の依頼をする
+                            <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
                         </a>
-                        <a href="#plans" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold rounded-full shadow-sm transition-all">
-                            料金プランを見る
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold rounded-full shadow-sm transition-all">
+                            事業内容を見る
                         </a>
                     </div>
-                    <p class="text-sm text-slate-600">
-                        お電話でも：<a href="tel:0823277600" class="font-bold text-miyako-dark text-lg underline-offset-4 hover:underline">0823-27-7600</a>
-                        <span class="block sm:inline text-xs text-slate-500 sm:ml-2">9:30〜17:00（日曜・祝日定休）</span>
-                    </p>
                 </div>
 
-                <div class="lg:col-span-6">
-                    <div class="relative mx-auto max-w-lg lg:max-w-none grid grid-cols-12 gap-3 sm:gap-4">
-                        <div class="col-span-8 overflow-hidden rounded-3xl shadow-xl border-4 border-white aspect-[4/5] bg-slate-200">
-                            <img src="images/113.jpg" width="900" height="616" alt="オーナー様と担当者のご相談の様子" class="w-full h-full object-cover" fetchpriority="high">
+                <!-- HERO IMAGES (同じフォルダにあれば、大森様のブラウザでは正しく表示されます) -->
+                <div class="lg:col-span-8 relative mt-8 lg:mt-0">
+                    <div class="relative mx-auto max-w-lg lg:max-w-[90%] grid grid-cols-12 gap-4">
+                        <div class="col-span-8 overflow-hidden rounded-3xl shadow-xl border-4 border-white aspect-[4/5] bg-slate-200 flex items-center justify-center text-slate-400 text-sm">
+                            <img src="images/111.jpg" alt="物件外観" class="w-full h-full object-cover">
                         </div>
-                        <div class="col-span-4 flex flex-col justify-end gap-3 sm:gap-4">
-                            <div class="overflow-hidden rounded-3xl shadow-lg border-4 border-white aspect-square bg-slate-200">
-                                <img src="images/S__3153945_0.jpg" width="1200" height="900" alt="呉市三条の事務所の打ち合わせスペース" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        <div class="col-span-4 flex flex-col justify-end gap-4">
+                            <div class="overflow-hidden rounded-3xl shadow-lg border-4 border-white aspect-square bg-slate-200 flex items-center justify-center text-slate-400 text-sm">
+                                <img src="images/112.jpg" alt="地域風景" class="w-full h-full object-cover">
                             </div>
-                            <div class="overflow-hidden rounded-3xl shadow-lg border-4 border-white aspect-[3/4] bg-slate-200">
-                                <img src="images/112.jpg" width="900" height="616" alt="管理物件のイメージ" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            <div class="overflow-hidden rounded-3xl shadow-lg border-4 border-white aspect-[3/4] bg-slate-200 flex items-center justify-center text-slate-400 text-sm">
+                                <img src="images/113.jpg" alt="街並み" class="w-full h-full object-cover">
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORRIES -->
-    <section id="akiya" class="py-16 md:py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-10">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">WORRIES</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家のこんなお悩み、ありませんか？</h2>
-            </div>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">遠方に住んでいて、実家の様子を見に行けない</span>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">庭の草木が伸びて、ご近所に迷惑をかけていないか心配</span>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">台風や大雨のあと、雨漏りや破損がないか気になる</span>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">郵便受けにチラシがたまり、空き家だと知られてしまう</span>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">売るか、貸すか、残すか、まだ決められない</span>
-                </li>
-                <li class="flex items-start gap-3 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-100">
-                    <i class="fa-solid fa-circle-check text-miyako-emerald text-xl mt-0.5"></i>
-                    <span class="text-base text-slate-800">相続した家の管理を、誰に頼めばいいか分からない</span>
-                </li>
-            </ul>
-            <div class="mt-10 text-center">
-                <i class="fa-solid fa-angles-down text-2xl text-miyako-dark"></i>
-                <p class="mt-3 text-xl sm:text-2xl font-bold text-slate-900 serif-text">
-                    空き家には<span class="text-miyako-dark">3つの選択肢</span>があります。
-                </p>
-            </div>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                <a href="#plans" class="group flex flex-col bg-white rounded-3xl border-2 border-miyako-dark/20 hover:border-miyako-dark p-6 shadow-sm transition-colors">
-                    <span class="w-14 h-14 rounded-2xl bg-sky-50 text-miyako-dark flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-house-circle-check"></i></span>
-                    <span class="text-sm font-bold text-miyako-dark">選択肢1</span>
-                    <span class="text-xl font-bold text-slate-900 mt-1">管理する</span>
-                    <span class="text-base text-slate-700 mt-2 flex-1">まだ決められない、いずれ住むかもしれない。月1回の巡回で、家の傷みを防ぎます。</span>
-                    <span class="mt-4 text-sm font-bold text-miyako-dark">空き家管理 月額3,300円〜 <i class="fa-solid fa-chevron-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span>
-                </a>
-                <a href="#saisei" class="group flex flex-col bg-white rounded-3xl border-2 border-miyako-emerald/20 hover:border-miyako-emerald p-6 shadow-sm transition-colors">
-                    <span class="w-14 h-14 rounded-2xl bg-teal-50 text-miyako-emerald flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-key"></i></span>
-                    <span class="text-sm font-bold text-miyako-emerald">選択肢2</span>
-                    <span class="text-xl font-bold text-slate-900 mt-1">再生して貸す</span>
-                    <span class="text-base text-slate-700 mt-2 flex-1">貸せるようにリフォームして、家賃収入に。入居者募集から管理まで当社にお任せください。</span>
-                    <span class="mt-4 text-sm font-bold text-miyako-emerald">空き家再生・賃貸活用 <i class="fa-solid fa-chevron-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span>
-                </a>
-                <a href="kaitori.html" class="group flex flex-col bg-white rounded-3xl border-2 border-cta/20 hover:border-cta p-6 shadow-sm transition-colors">
-                    <span class="w-14 h-14 rounded-2xl bg-orange-50 text-cta flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-hand-holding-dollar"></i></span>
-                    <span class="text-sm font-bold text-cta">選択肢3</span>
-                    <span class="text-xl font-bold text-slate-900 mt-1">売る・買い取ってもらう</span>
-                    <span class="text-base text-slate-700 mt-2 flex-1">古い家・家財が残った家も、そのままの状態で当社が直接買い取ります。仲介での売却もご相談いただけます。</span>
-                    <span class="mt-4 text-sm font-bold text-cta">空き家買取について <i class="fa-solid fa-chevron-right text-xs ml-1 group-hover:translate-x-1 transition-transform"></i></span>
-                </a>
-            </div>
-            <p class="mt-6 text-center text-base text-slate-600">どれが良いか分からなくても大丈夫。3つを比べて、所有者様に合った方法をご提案します。</p>
-        </div>
-    </section>
-
-    <!-- WHY -->
-    <section id="why" class="py-16 md:py-24 bg-miyako-sand border-y border-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">WHY</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">なぜ、空き家の管理が必要なの？</h2>
-                <p class="text-base text-slate-600">空き家を放置すると、3つのリスクが少しずつ大きくなります。</p>
-            </div>
-            <div class="space-y-6">
-                <article class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-4 sm:gap-6">
-                    <div class="flex sm:flex-col items-center gap-3">
-                        <span class="inline-flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-miyako-dark text-white font-bold leading-none">
-                            <span class="text-[11px]">理由</span><span class="text-2xl">1</span>
-                        </span>
-                        <i class="fa-solid fa-house-chimney-crack text-3xl text-miyako-dark/70"></i>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">人が住まない家は、傷みが早い</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            閉め切った室内は湿気がこもり、カビや木材の腐朽が進みます。水を流さないと排水口の封水が切れ、悪臭や害虫の入り口に。雨漏りなどの異常は、発見が遅れるほど修繕費が大きくなります。
-                        </p>
-                    </div>
-                </article>
-                <article class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-4 sm:gap-6">
-                    <div class="flex sm:flex-col items-center gap-3">
-                        <span class="inline-flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-miyako-dark text-white font-bold leading-none">
-                            <span class="text-[11px]">理由</span><span class="text-2xl">2</span>
-                        </span>
-                        <i class="fa-solid fa-user-secret text-3xl text-miyako-dark/70"></i>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">空き巣・放火・不法投棄に狙われやすい</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            あふれた郵便受けや伸び放題の庭は「人がいない家」の目印です。定期的に人が出入りし、きちんと管理されていることが外から見えるだけで、防犯効果が高まります。
-                        </p>
-                    </div>
-                </article>
-                <article class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-4 sm:gap-6">
-                    <div class="flex sm:flex-col items-center gap-3">
-                        <span class="inline-flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-miyako-dark text-white font-bold leading-none">
-                            <span class="text-[11px]">理由</span><span class="text-2xl">3</span>
-                        </span>
-                        <i class="fa-solid fa-scale-balanced text-3xl text-miyako-dark/70"></i>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">税金や損害賠償のリスクにつながる</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            空家等対策特別措置法により、管理が不十分な空き家は「管理不全空家」や「特定空家」として、市から指導・勧告を受けることがあります。勧告を受けると固定資産税の住宅用地特例が外れ、税負担が大きく増えることも。瓦や外壁が落ちて通行人にけがをさせた場合、所有者が責任を問われることもあります。
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA BAND 1 -->
-    <section class="py-12 bg-gradient-to-r from-[#0d9488] via-[#0b8075] to-[#015886] text-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-            <p class="text-xl sm:text-2xl font-bold">まずは無料の現地確認から。お見積り・ご相談は無料です。</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="#contact" data-topic="空き家管理" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-cta hover:bg-cta-dark text-white text-lg font-bold rounded-full shadow-lg transition-colors">
-                    <i class="fa-regular fa-envelope mr-2"></i>無料で相談する
-                </a>
-                <a href="tel:0823277600" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-miyako-dark text-lg font-bold rounded-full shadow-lg hover:bg-slate-100 transition-colors">
-                    <i class="fa-solid fa-phone mr-2"></i>0823-27-7600
-                </a>
-                <a href="https://lin.ee/8UhkPSX" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#06c755] hover:bg-[#05b04b] text-white text-lg font-bold rounded-full shadow-lg transition-colors">
-                    <i class="fa-brands fa-line mr-2 text-xl"></i>LINEで相談
-                </a>
-            </div>
-            <p class="text-sm text-white/85">受付 9:30〜17:00（日曜・祝日定休）／LINE・フォームは24時間受付</p>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">FEATURES</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">仁方大森マリーナーの空き家管理、4つの特長</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="flex gap-5 bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-100">
-                    <div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-sm text-miyako-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-location-dot"></i></div>
-                    <div class="space-y-2">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">地元・呉の会社だから、すぐ駆けつけられる</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">呉市三条の事務所から巡回します。台風・大雨・地震のあとの臨時巡回にも対応します（オプション）。</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-100">
-                    <div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-sm text-miyako-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-key"></i></div>
-                    <div class="space-y-2">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">貸主業35年以上の「大家の目」で点検</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">自社で不動産を所有・運営してきた経験から、傷みやすい箇所や修繕のタイミングを、所有者様の目線でお伝えします。</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-100">
-                    <div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-sm text-miyako-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-camera"></i></div>
-                    <div class="space-y-2">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">写真付き報告書を、メール・LINE・郵送で</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">巡回のたびに、家の様子を写真付きでお届けします。遠方にお住まいでも、変化がひと目で分かります。</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-100">
-                    <div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-sm text-miyako-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-handshake"></i></div>
-                    <div class="space-y-2">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">売却・賃貸・駐車場活用まで、まとめて相談</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">「この家をこの先どうするか」のご相談は無料です。当社に売却をご依頼中は、管理料が<strong class="text-cta">30%引き</strong>になります。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORK DETAILS -->
-    <section id="work" class="py-16 md:py-24 bg-[#fafbfc] border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">SERVICE</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家管理の作業内容</h2>
-                <p class="text-base text-slate-600">プランによって作業内容が異なります。詳しくは<a href="#plans" class="text-miyako-dark font-bold underline underline-offset-4">料金プラン</a>をご覧ください。</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm">
-                    <h3 class="flex items-center gap-3 text-lg sm:text-xl font-bold text-slate-900 mb-4">
-                        <span class="w-11 h-11 rounded-xl bg-sky-50 text-miyako-dark flex items-center justify-center"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        建物の内外の点検
-                    </h3>
-                    <ul class="space-y-2 text-base text-slate-700">
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>屋根・外壁・雨どい・塀・門扉などの外観目視点検</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>室内の雨漏り・カビ・害虫・破損の有無の確認</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>施錠・窓・勝手口などの防犯確認</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>ブレーカー・照明による通電確認</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm">
-                    <h3 class="flex items-center gap-3 text-lg sm:text-xl font-bold text-slate-900 mb-4">
-                        <span class="w-11 h-11 rounded-xl bg-sky-50 text-miyako-dark flex items-center justify-center"><i class="fa-solid fa-wind"></i></span>
-                        換気・通水
-                    </h3>
-                    <ul class="space-y-2 text-base text-slate-700">
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>全室の窓・押入れなどを開けての換気</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>各水栓の通水、排水口の封水・漏水確認</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm">
-                    <h3 class="flex items-center gap-3 text-lg sm:text-xl font-bold text-slate-900 mb-4">
-                        <span class="w-11 h-11 rounded-xl bg-sky-50 text-miyako-dark flex items-center justify-center"><i class="fa-solid fa-seedling"></i></span>
-                        敷地内の草木
-                    </h3>
-                    <ul class="space-y-2 text-base text-slate-700">
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>草木の伸び具合・隣地への越境の確認（基本プランに含む）</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-plus text-slate-400 mt-1.5 text-sm"></i>除草・草刈り、樹木の剪定・伐採（オプション）</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm">
-                    <h3 class="flex items-center gap-3 text-lg sm:text-xl font-bold text-slate-900 mb-4">
-                        <span class="w-11 h-11 rounded-xl bg-sky-50 text-miyako-dark flex items-center justify-center"><i class="fa-solid fa-envelope-open-text"></i></span>
-                        その他の管理
-                    </h3>
-                    <ul class="space-y-2 text-base text-slate-700">
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>郵便受けの確認・整理、チラシなどの処分</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>写真付き巡回報告書の送付（メール・LINE・郵送）</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>近隣からの苦情・ご連絡の一次対応</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-check text-miyako-emerald mt-1.5 text-sm"></i>鍵のお預かり、売却・賃貸などの活用相談（無料）</li>
-                        <li class="flex gap-2"><i class="fa-solid fa-plus text-slate-400 mt-1.5 text-sm"></i>台風・大雨・地震後の臨時巡回（オプション）</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PLANS -->
-    <section id="plans" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">PRICE</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家管理の料金プラン</h2>
-                <p class="text-base text-slate-600">どのプランも月1回訪問・写真付き報告書つき。料金はすべて税込です。</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 items-stretch">
-                <!-- Plan: 屋内確認 -->
-                <div class="flex flex-col">
-                    <div class="relative bg-sky-50 border border-sky-100 rounded-2xl p-4 mb-4">
-                        <p class="text-sm font-bold text-miyako-dark mb-2">こんな方におすすめ</p>
-                        <ul class="space-y-1 text-sm text-slate-700">
-                            <li><i class="fa-solid fa-circle-check text-miyako-dark mr-1"></i>費用を抑えて定期的に様子を見てほしい</li>
-                            <li><i class="fa-solid fa-circle-check text-miyako-dark mr-1"></i>近いうちに売却・解体を考えている</li>
-                        </ul>
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-sky-50 border-r border-b border-sky-100 rotate-45"></span>
-                    </div>
-                    <div class="flex-1 flex flex-col bg-white rounded-3xl border-2 border-miyako-dark/30 shadow-sm overflow-hidden">
-                        <div class="bg-miyako-dark text-white text-center px-6 py-5">
-                            <p class="text-xs tracking-widest opacity-90">戸建の空き家</p>
-                            <h3 class="text-2xl font-bold mt-1">屋内確認プラン</h3>
-                        </div>
-                        <div class="flex-1 flex flex-col p-6 space-y-4">
-                            <dl class="grid grid-cols-2 text-center divide-x divide-slate-100 border border-slate-100 rounded-xl">
-                                <div class="py-2"><dt class="text-xs text-slate-500">訪問</dt><dd class="font-bold text-slate-900">月1回</dd></div>
-                                <div class="py-2"><dt class="text-xs text-slate-500">作業時間</dt><dd class="font-bold text-slate-900">約30分</dd></div>
-                            </dl>
-                            <p class="text-sm text-slate-700 leading-relaxed flex-1">通電確認・通水・室内確認・外部確認・ポスト確認・写真付き報告書</p>
-                            <div class="text-center border-t border-slate-100 pt-4">
-                                <p class="text-sm text-slate-500">月額（税込）</p>
-                                <p class="text-4xl font-bold text-slate-900">3,300<span class="text-lg ml-0.5">円</span></p>
-                                <p class="mt-2 inline-block text-sm bg-cta-light text-cta font-bold px-3 py-1 rounded-full">売却ご依頼中は 月額2,310円</p>
-                            </div>
-                            <a href="#contact" data-topic="空き家管理" data-plan="屋内確認プラン" class="block text-center py-3 bg-miyako-dark hover:bg-miyako-ocean text-white rounded-full font-bold transition-colors">このプランで相談する</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plan: 標準 -->
-                <div class="flex flex-col">
-                    <div class="relative bg-orange-50 border border-orange-100 rounded-2xl p-4 mb-4">
-                        <p class="text-sm font-bold text-cta mb-2">こんな方におすすめ</p>
-                        <ul class="space-y-1 text-sm text-slate-700">
-                            <li><i class="fa-solid fa-circle-check text-cta mr-1"></i>建物の状態をできるだけ良く保ちたい</li>
-                            <li><i class="fa-solid fa-circle-check text-cta mr-1"></i>将来、住む・貸す・売る予定がある</li>
-                        </ul>
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-orange-50 border-r border-b border-orange-100 rotate-45"></span>
-                    </div>
-                    <div class="relative flex-1 flex flex-col bg-white rounded-3xl border-2 border-cta shadow-lg overflow-hidden">
-                        <div class="bg-cta text-white text-center px-6 py-5">
-                            <p class="text-xs tracking-widest opacity-90">戸建の空き家｜しっかり管理</p>
-                            <h3 class="text-2xl font-bold mt-1">標準プラン</h3>
-                        </div>
-                        <div class="flex-1 flex flex-col p-6 space-y-4">
-                            <dl class="grid grid-cols-2 text-center divide-x divide-slate-100 border border-slate-100 rounded-xl">
-                                <div class="py-2"><dt class="text-xs text-slate-500">訪問</dt><dd class="font-bold text-slate-900">月1回</dd></div>
-                                <div class="py-2"><dt class="text-xs text-slate-500">作業時間</dt><dd class="font-bold text-slate-900">約60分</dd></div>
-                            </dl>
-                            <p class="text-sm text-slate-700 leading-relaxed flex-1">屋内外の点検・換気・通水・簡易清掃・写真付き報告書</p>
-                            <div class="text-center border-t border-slate-100 pt-4">
-                                <p class="text-sm text-slate-500">月額（税込）</p>
-                                <p class="text-4xl font-bold text-slate-900">6,600<span class="text-lg ml-0.5">円</span></p>
-                                <p class="mt-2 inline-block text-sm bg-cta-light text-cta font-bold px-3 py-1 rounded-full">売却ご依頼中は 月額4,620円</p>
-                            </div>
-                            <a href="#contact" data-topic="空き家管理" data-plan="標準プラン" class="block text-center py-3 bg-cta hover:bg-cta-dark text-white rounded-full font-bold transition-colors">このプランで相談する</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plan: マンション -->
-                <div class="flex flex-col">
-                    <div class="relative bg-teal-50 border border-teal-100 rounded-2xl p-4 mb-4">
-                        <p class="text-sm font-bold text-miyako-emerald mb-2">こんな方におすすめ</p>
-                        <ul class="space-y-1 text-sm text-slate-700">
-                            <li><i class="fa-solid fa-circle-check text-miyako-emerald mr-1"></i>マンション・アパートの空き室がある</li>
-                            <li><i class="fa-solid fa-circle-check text-miyako-emerald mr-1"></i>室内の換気・通水を定期的にしてほしい</li>
-                        </ul>
-                        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-teal-50 border-r border-b border-teal-100 rotate-45"></span>
-                    </div>
-                    <div class="flex-1 flex flex-col bg-white rounded-3xl border-2 border-miyako-emerald/40 shadow-sm overflow-hidden">
-                        <div class="bg-miyako-emerald text-white text-center px-6 py-5">
-                            <p class="text-xs tracking-widest opacity-90">マンション・アパートの1室</p>
-                            <h3 class="text-2xl font-bold mt-1">マンションプラン</h3>
-                        </div>
-                        <div class="flex-1 flex flex-col p-6 space-y-4">
-                            <dl class="grid grid-cols-2 text-center divide-x divide-slate-100 border border-slate-100 rounded-xl">
-                                <div class="py-2"><dt class="text-xs text-slate-500">訪問</dt><dd class="font-bold text-slate-900">月1回</dd></div>
-                                <div class="py-2"><dt class="text-xs text-slate-500">作業時間</dt><dd class="font-bold text-slate-900">約40分</dd></div>
-                            </dl>
-                            <p class="text-sm text-slate-700 leading-relaxed flex-1">室内点検・換気・通水・ポスト整理・写真付き報告書</p>
-                            <div class="text-center border-t border-slate-100 pt-4">
-                                <p class="text-sm text-slate-500">月額（税込）</p>
-                                <p class="text-4xl font-bold text-slate-900">3,300<span class="text-lg ml-0.5">円</span></p>
-                                <p class="mt-2 inline-block text-sm bg-cta-light text-cta font-bold px-3 py-1 rounded-full">売却ご依頼中は 月額2,310円</p>
-                            </div>
-                            <a href="#contact" data-topic="空き家管理" data-plan="マンションプラン" class="block text-center py-3 bg-miyako-emerald hover:bg-teal-700 text-white rounded-full font-bold transition-colors">このプランで相談する</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Discount & free -->
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="flex gap-4 items-start bg-cta-light border border-orange-200 rounded-2xl p-5">
-                    <span class="shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-full bg-cta text-white font-bold text-lg">30%<br class="hidden"></span>
-                    <p class="text-base text-slate-800 leading-relaxed">
-                        <strong>売却ご依頼中は管理料30%引き。</strong><br>
-                        当社と売却の専任媒介契約・専属専任媒介契約を結んでいる間は、基本プランの月額料金が30%引きになります。
-                    </p>
-                </div>
-                <div class="flex gap-4 items-start bg-sky-50 border border-sky-100 rounded-2xl p-5">
-                    <span class="shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-full bg-miyako-dark text-white font-bold">無料</span>
-                    <p class="text-base text-slate-800 leading-relaxed">
-                        <strong>初回の現地確認・鍵のお預かり・管理表示板の設置（任意）は無料です。</strong><br>
-                        まずは物件の状態を見せてください。
-                    </p>
-                </div>
-            </div>
-
-            <!-- Options -->
-            <div class="mt-12">
-                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6">オプション（必要なときだけ）</h3>
-                <div class="overflow-hidden rounded-2xl border border-slate-200">
-                    <table class="w-full text-left text-sm sm:text-base">
-                        <thead class="bg-slate-100 text-slate-700">
-                            <tr>
-                                <th scope="col" class="px-4 sm:px-6 py-3 font-bold">作業内容</th>
-                                <th scope="col" class="px-4 sm:px-6 py-3 font-bold whitespace-nowrap w-1/3">料金（税込）</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100 bg-white text-slate-800">
-                            <tr><td class="px-4 sm:px-6 py-3">スポット点検<span class="block text-xs sm:text-sm text-slate-500">単発での訪問。建物外観の確認・写真付き報告書</span></td><td class="px-4 sm:px-6 py-3 font-bold">1回 5,500円</td></tr>
-                            <tr><td class="px-4 sm:px-6 py-3">臨時巡回 ※<span class="block text-xs sm:text-sm text-slate-500">台風・大雨・地震のあと、所有者様のご依頼時</span></td><td class="px-4 sm:px-6 py-3 font-bold">1回 3,300円</td></tr>
-                            <tr><td class="px-4 sm:px-6 py-3">郵便物の転送 ※</td><td class="px-4 sm:px-6 py-3 font-bold">1回 550円＋送料実費</td></tr>
-                            <tr><td class="px-4 sm:px-6 py-3">除草・草刈り</td><td class="px-4 sm:px-6 py-3">現地確認のうえお見積り</td></tr>
-                            <tr><td class="px-4 sm:px-6 py-3">樹木の剪定・伐採</td><td class="px-4 sm:px-6 py-3">現地確認のうえお見積り</td></tr>
-                            <tr><td class="px-4 sm:px-6 py-3">室内清掃（簡易清掃を超えるもの）、残置物・不用品の片付け</td><td class="px-4 sm:px-6 py-3">現地確認のうえお見積り</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="mt-3 text-sm text-slate-600">※ 臨時巡回・郵便物の転送は、基本プランをご契約のお客様に限ります。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLOW -->
-    <section id="flow" class="py-16 md:py-24 bg-miyako-sand border-y border-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">FLOW</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">ご利用までの流れ</h2>
-            </div>
-            <ol class="space-y-4">
-                <li class="flex gap-4 sm:gap-6 bg-white rounded-3xl p-5 sm:p-7 border border-slate-100 shadow-sm">
-                    <span class="shrink-0 w-14 h-14 rounded-full bg-cta text-white flex flex-col items-center justify-center font-bold leading-none"><span class="text-[10px]">STEP</span><span class="text-xl">1</span></span>
-                    <div class="space-y-1">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">お問い合わせ</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">お電話・LINE・フォームからお気軽にご連絡ください。ご相談・お見積りは無料です。</p>
-                    </div>
-                </li>
-                <li class="flex gap-4 sm:gap-6 bg-white rounded-3xl p-5 sm:p-7 border border-slate-100 shadow-sm">
-                    <span class="shrink-0 w-14 h-14 rounded-full bg-cta text-white flex flex-col items-center justify-center font-bold leading-none"><span class="text-[10px]">STEP</span><span class="text-xl">2</span></span>
-                    <div class="space-y-1">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">現地確認（無料）</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">担当者が物件を確認し、建物の状態やご要望に合ったプランをご提案します。鍵のお預かり・管理表示板の設置（任意）も無料です。</p>
-                    </div>
-                </li>
-                <li class="flex gap-4 sm:gap-6 bg-white rounded-3xl p-5 sm:p-7 border border-slate-100 shadow-sm">
-                    <span class="shrink-0 w-14 h-14 rounded-full bg-cta text-white flex flex-col items-center justify-center font-bold leading-none"><span class="text-[10px]">STEP</span><span class="text-xl">3</span></span>
-                    <div class="space-y-1">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">ご契約</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">契約期間は1年（自動更新）です。解約は1か月前までのお申し出で可能で、違約金はありません。</p>
-                    </div>
-                </li>
-                <li class="flex gap-4 sm:gap-6 bg-white rounded-3xl p-5 sm:p-7 border border-slate-100 shadow-sm">
-                    <span class="shrink-0 w-14 h-14 rounded-full bg-cta text-white flex flex-col items-center justify-center font-bold leading-none"><span class="text-[10px]">STEP</span><span class="text-xl">4</span></span>
-                    <div class="space-y-1">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">お支払い</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">料金は前払いの銀行振込です。月払い・年払いからお選びいただけます（振込手数料はお客様のご負担となります）。</p>
-                    </div>
-                </li>
-                <li class="flex gap-4 sm:gap-6 bg-white rounded-3xl p-5 sm:p-7 border border-slate-100 shadow-sm">
-                    <span class="shrink-0 w-14 h-14 rounded-full bg-miyako-dark text-white flex flex-col items-center justify-center font-bold leading-none"><span class="text-[10px]">STEP</span><span class="text-xl">5</span></span>
-                    <div class="space-y-1">
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900">管理スタート</h3>
-                        <p class="text-base text-slate-700 leading-relaxed">月1回巡回し、写真付きの巡回報告書をメール・LINE・郵送でお届けします。</p>
-                    </div>
-                </li>
-            </ol>
-
-            <!-- AREA & CONDITIONS -->
-            <div id="area" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-100 shadow-sm space-y-3">
-                    <h3 class="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-900"><i class="fa-solid fa-map-location-dot text-miyako-dark"></i>対応エリア・対象物件</h3>
-                    <p class="text-base text-slate-800"><strong>呉市内全域</strong><span class="text-sm text-slate-500">（島しょ部は対象外です）</span></p>
-                    <ul class="text-base text-slate-700 space-y-1">
-                        <li><i class="fa-solid fa-house text-slate-400 mr-2"></i>戸建の空き家</li>
-                        <li><i class="fa-solid fa-building text-slate-400 mr-2"></i>マンション・アパートなどの空き住戸</li>
-                        <li><i class="fa-solid fa-tree text-slate-400 mr-2"></i>空き地</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-100 shadow-sm space-y-3">
-                    <h3 class="flex items-center gap-2 text-lg sm:text-xl font-bold text-slate-900"><i class="fa-solid fa-circle-info text-miyako-dark"></i>ご契約にあたってのお願い</h3>
-                    <ul class="text-base text-slate-700 space-y-2 list-disc pl-5">
-                        <li>通水・換気のため、水道・電気の契約は継続をお願いします（基本料金は所有者様のご負担）。</li>
-                        <li>自然災害や第三者の行為による建物の損害は、補償の対象外です。</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SAISEI: 空き家再生・賃貸活用 -->
-    <section id="saisei" class="py-16 md:py-24 bg-teal-50/60 border-b border-teal-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-emerald">RENOVATION &amp; RENT</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家をリフォームして、家賃収入に。</h2>
-                <p class="text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                    「売るのは寂しい」「いずれまた使うかもしれない」。そんなときは、<strong>貸す</strong>という選択肢もあります。35年以上自ら大家をしてきた当社が、貸せる家への再生から入居者募集・管理まで一貫してお手伝いします。
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                <div class="bg-white rounded-3xl p-6 border border-teal-100 shadow-sm space-y-3">
-                    <span class="w-12 h-12 rounded-xl bg-teal-50 text-miyako-emerald flex items-center justify-center text-xl"><i class="fa-solid fa-coins"></i></span>
-                    <h3 class="text-lg font-bold text-slate-900">家賃収入で維持費をまかなえる</h3>
-                    <p class="text-base text-slate-700 leading-relaxed">固定資産税や修繕費など、持っているだけでかかる費用を家賃でカバーできます。</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-teal-100 shadow-sm space-y-3">
-                    <span class="w-12 h-12 rounded-xl bg-teal-50 text-miyako-emerald flex items-center justify-center text-xl"><i class="fa-solid fa-house-chimney-window"></i></span>
-                    <h3 class="text-lg font-bold text-slate-900">人が住むから、家が傷みにくい</h3>
-                    <p class="text-base text-slate-700 leading-relaxed">毎日の換気や通水が自然に行われ、空き家のままにしておくより建物が長持ちします。</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-teal-100 shadow-sm space-y-3">
-                    <span class="w-12 h-12 rounded-xl bg-teal-50 text-miyako-emerald flex items-center justify-center text-xl"><i class="fa-solid fa-hourglass-half"></i></span>
-                    <h3 class="text-lg font-bold text-slate-900">手放さずに資産として残せる</h3>
-                    <p class="text-base text-slate-700 leading-relaxed">定期借家契約なら、期間を決めて貸すこともできます。将来「住む」「売る」の選択肢も残せます。</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 border border-teal-100 shadow-sm space-y-3">
-                    <span class="w-12 h-12 rounded-xl bg-teal-50 text-miyako-emerald flex items-center justify-center text-xl"><i class="fa-solid fa-paint-roller"></i></span>
-                    <h3 class="text-lg font-bold text-slate-900">大家目線の「貸せるリフォーム」</h3>
-                    <p class="text-base text-slate-700 leading-relaxed">入居者に選ばれる箇所にだけ費用をかけ、ターゲットに合わせた仕様で、ムダな工事をしません。</p>
-                </div>
-            </div>
-
-            <div class="mt-12 bg-white rounded-3xl border border-teal-100 shadow-sm p-6 sm:p-8">
-                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-8">空き家再生から賃貸までの流れ</h3>
-                <ol class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-3">
-                    <li class="relative text-center space-y-2 bg-teal-50/60 md:bg-transparent rounded-2xl p-4 md:p-0">
-                        <span class="mx-auto w-12 h-12 rounded-full bg-miyako-emerald text-white flex items-center justify-center text-lg font-bold">1</span>
-                        <p class="font-bold text-slate-900">ご相談・現地調査</p>
-                        <p class="text-sm text-slate-600">建物の状態と立地を確認します。</p>
-                    </li>
-                    <li class="relative text-center space-y-2 bg-teal-50/60 md:bg-transparent rounded-2xl p-4 md:p-0">
-                        <span class="mx-auto w-12 h-12 rounded-full bg-miyako-emerald text-white flex items-center justify-center text-lg font-bold">2</span>
-                        <p class="font-bold text-slate-900">家賃とリフォーム費用のご提案</p>
-                        <p class="text-sm text-slate-600">家賃の見込みと工事費から、収支の見通しをお伝えします。</p>
-                    </li>
-                    <li class="relative text-center space-y-2 bg-teal-50/60 md:bg-transparent rounded-2xl p-4 md:p-0">
-                        <span class="mx-auto w-12 h-12 rounded-full bg-miyako-emerald text-white flex items-center justify-center text-lg font-bold">3</span>
-                        <p class="font-bold text-slate-900">リフォーム</p>
-                        <p class="text-sm text-slate-600">必要な箇所を見極めてプランニング・施工します。</p>
-                    </li>
-                    <li class="relative text-center space-y-2 bg-teal-50/60 md:bg-transparent rounded-2xl p-4 md:p-0">
-                        <span class="mx-auto w-12 h-12 rounded-full bg-miyako-emerald text-white flex items-center justify-center text-lg font-bold">4</span>
-                        <p class="font-bold text-slate-900">入居者募集</p>
-                        <p class="text-sm text-slate-600">SUUMOなどに掲載し、入居者を探します。</p>
-                    </li>
-                    <li class="relative text-center space-y-2 bg-teal-50/60 md:bg-transparent rounded-2xl p-4 md:p-0">
-                        <span class="mx-auto w-12 h-12 rounded-full bg-miyako-emerald text-white flex items-center justify-center text-lg font-bold">5</span>
-                        <p class="font-bold text-slate-900">賃貸管理</p>
-                        <p class="text-sm text-slate-600">家賃回収・入居者対応・修繕・清掃まで代行します。</p>
-                    </li>
-                </ol>
-                <p class="mt-8 text-center text-base text-slate-700">
-                    <i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i>入居者が決まるまでの間は、<a href="#plans" class="font-bold text-miyako-dark underline underline-offset-4">空き家管理プラン</a>で家を守ることもできます。
-                </p>
-                <div class="mt-6 text-center">
-                    <a href="#contact" data-topic="空き家再生・賃貸活用" class="inline-flex items-center justify-center px-8 py-4 bg-miyako-emerald hover:bg-teal-700 text-white text-lg font-bold rounded-full shadow-md transition-colors">
-                        貸せるかどうか相談する<i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16 md:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">FAQ</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">よくあるご質問</h2>
-            </div>
-            <div class="space-y-3">
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">対応しているエリアはどこですか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>呉市内全域に対応しています。島しょ部は対象外となりますので、ご了承ください。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">遠方に住んでいても申し込めますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>はい。鍵をお預かりして巡回し、毎回の様子は写真付きの報告書でメール・LINE・郵送からお選びいただけます。お問い合わせもお電話・LINE・フォームで完結します。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">契約期間と解約について教えてください。</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>契約期間は1年で、自動更新です。解約は1か月前までにお申し出いただければ可能で、違約金はかかりません。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">支払い方法は？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>前払いの銀行振込で、月払い・年払いからお選びいただけます。振込手数料はお客様のご負担となります。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">水道や電気は止めてもいいですか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>通水・換気・通電確認を行うため、水道と電気の契約は継続をお願いしています。基本料金は所有者様のご負担となります。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">台風や大雨のあとに見に行ってもらえますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>はい。基本プランをご契約のお客様は、ご依頼に応じて臨時巡回（1回3,300円）を行います。単発で点検だけ頼みたい場合は、スポット点検（1回5,500円）もご利用いただけます。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">草刈りや木の剪定もお願いできますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>草木の伸び具合や隣地への越境の確認は、基本プランに含まれています。除草・草刈り、樹木の剪定・伐採はオプションとして、現地確認のうえお見積りします。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">建物に被害があった場合、補償はありますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>自然災害や第三者の行為による建物の損害は、補償の対象外です。空き家になると火災保険の条件が変わる場合もあるため、損害保険代理店でもある当社で、空き家に合った補償の見直しもご相談いただけます。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">将来は売却も考えています。管理と一緒に相談できますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>はい、売却・賃貸などの活用相談は無料です。当社と売却の専任媒介契約・専属専任媒介契約を結んでいる間は、管理料が30%引きになります。状態を問わない自社での直接買取もご相談ください。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">古い家でも、リフォームして貸せますか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>建物の状態や立地によって変わります。現地を確認し、必要なリフォームの範囲と家賃の見込みをお伝えしたうえで、貸すのが良いか、売るのが良いかも含めてご提案します。</p></div>
-                </details>
-                <details class="group bg-slate-50 rounded-2xl border border-slate-100">
-                    <summary class="flex items-start gap-3 cursor-pointer p-5 text-base sm:text-lg font-bold text-slate-900">
-                        <span class="text-miyako-dark">Q</span><span class="flex-1">管理表示板とは何ですか？</span><i class="faq-icon fa-solid fa-plus text-slate-400 mt-1 transition-transform"></i>
-                    </summary>
-                    <div class="flex gap-3 px-5 pb-5 text-base text-slate-700 leading-relaxed"><span class="font-bold text-cta">A</span><p>「この家は管理されています」と外から分かるようにする表示板です。設置は任意・無料で、防犯や、ご近所からの連絡先の案内に役立ちます。</p></div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPECIAL / BUYOUT BANNER -->
-    <section class="py-12 bg-gradient-to-r from-[#0d9488] via-[#0b8075] to-[#015886] text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
-                <div class="lg:col-span-8 space-y-3">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-white/20 tracking-wider">不動産の特別解決相談窓口</span>
-                    <p class="text-xl sm:text-2xl font-bold leading-relaxed">
-                        他社で断られた物件も、諦める前にご相談ください。<br class="hidden sm:inline">
-                        状態を問わない自社での直接買取の実績も豊富です。
-                    </p>
-                </div>
-                <div class="lg:col-span-4 text-center lg:text-right">
-                    <a href="kaitori.html" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-100 text-miyako-dark font-bold rounded-full shadow-lg transition-colors">
-                        <i class="fa-solid fa-hand-holding-dollar mr-2"></i>空き家買取について見る
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CORE SERVICES -->
-    <section id="services" class="py-16 md:py-24 bg-[#fafbfc] border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12 md:mb-16">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">OUR SERVICES</p>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家の「これから」も、まとめてご相談ください</h2>
-                <p class="text-base text-slate-600 max-w-2xl mx-auto">
-                    管理だけでなく、売買・仲介、賃貸管理、駐車場活用、リフォーム、保険まで。一社でトータルに解決します。
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-handshake"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            戸建・分譲マンション・工場まで
-                            <span class="text-miyako-emerald text-base block mt-1">不動産売買・仲介</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            一戸建て、マンション、工場や倉庫まで、適正な市場価格でスムーズに仲介します。工場の取り扱いは特に得意としており、地元ならではの土地勘から最適な売却時期をご提案します。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="kaitori.html" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">売却・買取について見る <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-house-laptop"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            オーナー様に寄り添う賃貸管理
-                            <span class="text-miyako-emerald text-base block mt-1">一貫型賃貸経営・管理代行</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            入居者対応、修繕、清掃、家賃回収、精算から入居付けまで一元管理。自社物件を35年以上運営してきた経験を活かし、家主様の立場でご提案します。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="#contact" data-topic="賃貸管理" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">賃貸管理を相談する <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-square-parking"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            費用負担をカバーする土地活用
-                            <span class="text-miyako-emerald text-base block mt-1">一括借上げ・月極駐車場運営</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            相続後に持て余している土地を、当社が一括で借り上げて月極駐車場として運営します。管理の手間がかからず、売却や開発までの維持費・税金の補填に最適です。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="#contact" data-topic="駐車場・土地活用" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">駐車場活用を相談する <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-paint-roller"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            ターゲットに合わせた価値向上
-                            <span class="text-miyako-emerald text-base block mt-1">リフォーム・空き家再生</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            必要な箇所だけの部分補修から、間取り変更を伴うリノベーションまで。物件ごとのターゲット層に合わせた仕様をプランニング・施工します。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="#saisei" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">空き家再生・賃貸活用を見る <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-chart-line"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            長期的な資産形成とノウハウ共有
-                            <span class="text-miyako-emerald text-base block mt-1">収益アパート・マンションのご提案</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            利回りの見込める一棟アパート・マンション・ビルなどをご提案。自社オーナーとして得た、実践的な収益ノウハウを共有します。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="#contact" data-topic="収益物件・資産運用" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">資産運用について聞く <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                            正規保険代理店としてのご提案
-                            <span class="text-miyako-emerald text-base block mt-1">無駄のない損害保険プラン</span>
-                        </h3>
-                        <p class="text-base text-slate-700 leading-relaxed">
-                            建物の構造や地域の災害リスクを知る私たちだからこそ、必要な補償はしっかり確保し、不要な特約を省いたプランをご提案できます。空き家の保険の見直しもお任せください。
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100">
-                        <a href="#contact" data-topic="保険" class="inline-flex items-center text-sm font-bold text-miyako-dark hover:underline">損害保険を相談する <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
                     </div>
                 </div>
             </div>
@@ -966,46 +189,276 @@
     <!-- CONCEPT / ABOUT -->
     <section id="about" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12 md:mb-16">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">CONCEPT &amp; MISSION</p>
+            <div class="text-center space-y-4 mb-12 md:mb-16">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Concept &amp; Mission</span>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">地域の暮らしと資産を守り、未来へ紡ぐ</h2>
             </div>
+            
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
-                <div class="lg:col-span-5 space-y-5 text-slate-700 leading-relaxed text-base">
-                    <p class="text-slate-900 text-lg">
-                        この街に根ざして35年以上。一般住宅から賃貸マンション・収益ビル、倉庫・工場跡地などの事業用地まで、街全体の不動産価値を見つめ続けてきました。
+                <div class="lg:col-span-4 space-y-6 text-slate-600 font-light leading-relaxed text-sm sm:text-base">
+                    <p class="font-normal text-slate-900 text-base sm:text-lg">
+                        この街に深く根ざして35年以上。私たちは、一般住宅から賃貸マンション・収益ビル、倉庫・工場跡地等の事業用地に至るまで、街全体の不動産価値を見つめ続けてきました。
                     </p>
                     <p>
-                        私たちは仲介会社である前に、自ら不動産を所有し、経営してきたオーナーでもあります。オーナー様の事情、相続、維持費の問題を真剣にお聞きし、ときに駐車場として一括で借り上げ、ときに入居者管理から清掃・修繕・リフォームまで一貫して代行してきました。
-                        <strong class="text-slate-900">貸主業35年以上の実体験があるからこそ、家主様の気持ちがよく分かります。</strong>
+                        土地を所有されるオーナー様の事情、相続、維持費の問題。それらを真剣に聞き、時に一括して駐車場を借り上げて、時に入居者管理から清掃、修繕、リフォームによる資産価値向上まで一貫して代行してきました。
+                        <strong class="font-bold text-slate-900">貸主業35年以上の実体験があるからこそ、家主様の気持ちがよく分かります。</strong>
                     </p>
                     <p>
-                        売りたい人・貸したい人と、住みたい人。事業者と地域社会。そして穏やかな世代交代。不動産という地域最大のバトンを、誠実・確実にお繋ぎします。
+                        売り・貸したい人、と住みたい人、事業者と地域社会、穏やかな世代交代。不動産という地域最大のバトンを、誠実・確実にお繋ぎします。
                     </p>
                 </div>
-                <div class="lg:col-span-7">
-                    <img src="images/114.jpg" width="1400" height="843" alt="リフォーム後の明るいリビング" class="w-full h-auto rounded-3xl shadow-xl border border-slate-100" loading="lazy" decoding="async">
+                
+                <!-- ABOUT IMAGE (同じフォルダにあれば、大森様のブラウザでは正しく表示されます) -->
+                <div class="lg:col-span-8 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-miyako-light to-transparent opacity-40 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl border border-slate-100 bg-slate-200 flex items-center justify-center text-slate-400 text-sm min-h-[300px]">
+                        <img src="images/114.jpg" alt="明るく開放的な打ち合わせスペース" class="w-full h-auto object-cover rounded-3xl" loading="lazy" decoding="async">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROPERTIES -->
-    <section id="properties" class="py-16 bg-slate-50 border-t border-slate-100">
+    <!-- SPECIAL POWER SECTION -->
+    <section class="py-12 bg-gradient-to-r from-[#0d9488] via-[#0b8075] to-[#015886] text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200');"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+                <div class="lg:col-span-8 space-y-3 text-left">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white backdrop-blur-sm tracking-wider">
+                        不動産の特別解決相談窓口
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-bold leading-relaxed tracking-wide">
+                        他社で断られた物件も、諦める前にご相談ください。<br>
+                        「不動産の困った」に真摯に向き合い、確かな価値へと導きます。<br>
+                        直接買取実績も豊富にございます。まずは私たちにお気軽にお声がけください。
+                    </h3>
+                </div>
+                <div class="lg:col-span-4 text-center lg:text-right">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-100 text-miyako-dark font-extrabold rounded-full transition-all duration-300 shadow-lg hover:scale-105 tracking-wide text-sm">
+                        <i class="fa-solid fa-comments mr-2 text-base"></i> まずは無料相談する
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKIYA SERVICES（各ランディングページへの入口） -->
+    <section id="akiya-services" class="py-16 md:py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12 md:mb-16">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Akiya Services</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">空き家のお悩みは、3つの方法で解決します</h2>
+                <p class="text-sm sm:text-base text-slate-500 max-w-xl mx-auto font-light">
+                    管理する・貸す・売る。所有者様のご事情に合わせて、最適な方法をご提案します。
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <a href="akiya-kanri.html" class="group bg-[#fafbfc] p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl mb-5"><i class="fa-solid fa-house-circle-check"></i></div>
+                    <span class="text-miyako-emerald font-bold text-sm">管理する</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1">空き家管理サービス</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-light mt-3 flex-1">月1回の巡回・換気・通水と写真付きの報告書で、離れて暮らすご実家を見守ります。月額3,300円（税込）から。</p>
+                    <span class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center text-sm font-bold text-miyako-dark">詳しくみる <i class="fa-solid fa-chevron-right ml-1 text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+                <a href="akiya-saisei.html" class="group bg-[#fafbfc] p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-50 text-[#0d9488] flex items-center justify-center text-2xl mb-5"><i class="fa-solid fa-key"></i></div>
+                    <span class="text-miyako-emerald font-bold text-sm">貸す</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1">空き家再生・賃貸活用</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-light mt-3 flex-1">大家目線のリフォームで「貸せる家」に再生。入居者募集から賃貸管理まで一貫してお任せいただけます。</p>
+                    <span class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center text-sm font-bold text-miyako-dark">詳しくみる <i class="fa-solid fa-chevron-right ml-1 text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+                <a href="kaitori.html" class="group bg-[#fafbfc] p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-700 flex items-center justify-center text-2xl mb-5"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <span class="text-miyako-emerald font-bold text-sm">売る</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1">空き家買取</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-light mt-3 flex-1">古い家・家財が残った家も、そのままの状態で当社が直接買い取ります。仲介手数料はかかりません。</p>
+                    <span class="mt-6 pt-4 border-t border-slate-100 inline-flex items-center text-sm font-bold text-miyako-dark">詳しくみる <i class="fa-solid fa-chevron-right ml-1 text-xs group-hover:translate-x-1 transition-transform"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section id="services" class="py-16 md:py-24 bg-[#fafbfc] border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12 md:mb-16">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Our Services</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">主要事業のご案内</h2>
+                <p class="text-sm sm:text-base text-slate-500 max-w-xl mx-auto font-light">
+                    売買・仲介から一元管理、ごみ処分、駐車場活用、戦略的リフォームまでトータルに解決します。
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            戸建・分譲マンション・工場まで<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「不動産売買・仲介」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            一戸建て、マンション、工場や倉庫まで土地取引を適正な市場価格でスムーズに仲介。特に工場の扱いは得意としており、豊富な宣伝活動に加え、地元ならではの深い土地勘から最適な売却時期をサポートします。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="kaitori.html" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            売却・買取について詳しくみる <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-house-laptop"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            オーナー様に寄り添う賃貸管理<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「一貫型賃貸経営・管理代行」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            入居者対応、修繕、清掃、家賃回収、清算から入居付けまで一元管理。自社物件を35年以上運営してきた家主様の気持ちがよくわかる我々の経験をお安くご提案。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            管理プランの相談をする <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-[#0d9488] flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            正規保険代理店としての提案<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「保険代理店だからできる無駄のない保険提案」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            建物の構造や地域の災害リスクを一番よく知っているのは、物件をご案内した私たちです。必要な補償はしっかり確保しつつ、不要な特約を省いた無駄のないプランをご提案します。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            損害保険のご相談をする <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-square-parking"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            費用負担をカバーする土地一括運営<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「一括借上げ・月極駐車場運営」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            相続後に持て余しているような未利用地を、弊社が一括で借り上げて月極駐車場として運営します。管理の手間が一切かからず、売却や自己利用、開発までの土地の維持・租税の補填に最適です。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            駐車場化のご案内 <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            長期的な資産形成とノウハウ共有<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「収益アパート・マンションの提案」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            長くお付き合いいただく大切なお客様へ、利回りの見込める優良一棟アパートやマンション、ビルなどをご提案。自社オーナーとして得た、綺麗ごと抜きの「本物の収益ノウハウ」を共有します。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            資産運用について聞く <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">
+                            ターゲットに合わせた価値向上設計<br>
+                            <span class="text-miyako-emerald font-bold text-sm block mt-1">「リフォーム・リノベーション提案」</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                            必要な箇所だけの部分的な補修から、間取り変更を伴うライフスタイル提案まで。物件ごとのターゲット層に完全に合わせた仕様変更リフォームを的確にプランニング・施工します。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-50">
+                        <a href="akiya-saisei.html" class="inline-flex items-center text-xs font-bold text-miyako hover:text-miyako-dark transition-colors">
+                            空き家再生・リフォームを詳しくみる <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVALUATION / CONSULTATION -->
+    <section class="py-16 md:py-24 bg-white border-b border-slate-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <p class="text-sm font-bold tracking-widest text-miyako-dark">PROPERTIES</p>
-            <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">ご紹介中の物件</h2>
-            <p class="text-base text-slate-700 max-w-xl mx-auto leading-relaxed">
-                当社が取り扱っている最新の物件情報は、広島県宅建協会の「スマイミー」と「SUUMO」で随時公開しています。
+            <div class="space-y-4 mb-4">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">CONSULTATION</span>
+                <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">不動産査定・ご相談窓口</h2>
+            </div>
+            <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
+                お持ちの土地や建物、アパート、ご自宅などのご売却査定を承っております。お客様のご要望をお伺いしたうえで、自社直接買取や駐車場活用、最適なターゲット層に合わせたリフォーム・仕様変更プランも含めた最適な売却・活用プランをご案内いたします。まずはお気軽に下記のお問い合わせフォーム・お電話・または公式LINEよりお問い合わせください。
             </p>
-            <div class="pt-2 max-w-md mx-auto space-y-4">
-                <a href="https://www.fudohsan.jp/%E4%B8%8D%E5%8B%95%E7%94%A3%E4%BC%9A%E7%A4%BE/3537/%E5%85%A8%E7%89%A9%E4%BB%B6/nav_id/-" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-6 py-4 bg-slate-900 hover:bg-slate-800 text-white transition-colors rounded-full font-bold text-base">
-                    <i class="fa-solid fa-house-laptop mr-2"></i>物件一覧を見る（スマイミー）
+            <div class="pt-4">
+                <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-miyako hover:bg-miyako-dark text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all">
+                    <i class="fa-regular fa-envelope mr-2"></i>査定依頼・ご相談フォームへ進む
                 </a>
-                <a href="https://manager.suumo.jp/sn/fudousan/shosai/FR351FD001.do?ar=000&bs=040&kskbn=01&kc=169795001&pvscd=23184658274ssor6710DAE416050EA599521F1A7A7132ACAE9" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-6 py-3.5 border-2 border-[#2b9000] text-[#2b7a00] hover:bg-[#2b9000] hover:text-white font-bold rounded-full transition-colors text-base">
-                    <i class="fa-solid fa-square-arrow-up-right mr-2"></i>SUUMOで物件を見る
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPERTIES（物件一覧：Googleスプレッドシートから自動表示） -->
+    <section id="properties" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-10 md:mb-12">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Properties</span>
+                <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">現在ご紹介中の物件</h2>
+            </div>
+
+            <div data-bukken-list data-limit="6"></div>
+
+            <div class="mt-10 text-center">
+                <a href="bukken.html" class="inline-flex items-center justify-center px-8 py-4 bg-miyako hover:bg-miyako-dark text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all">
+                    物件一覧をすべて見る <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
                 </a>
-                <p class="text-xs text-slate-500">※ 外部サイトへ移動します。</p>
+            </div>
+
+            <div class="mt-12 max-w-md mx-auto space-y-4 text-center">
+                <p class="text-sm text-slate-600 font-light">「スマイミー」「SUUMO」でも物件情報を公開しています。</p>
+                <a href="https://www.fudohsan.jp/%E4%B8%8D%E5%8B%95%E7%94%A3%E4%BC%9A%E7%A4%BE/3537/%E5%85%A8%E7%89%A9%E4%BB%B6/nav_id/-" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-6 py-3.5 bg-slate-900 text-white hover:bg-slate-800 transition-all rounded-full font-bold text-sm sm:text-base">
+                    <i class="fa-solid fa-house-laptop mr-2 text-base text-miyako-light"></i>
+                    仁方大森マリーナーの物件一覧（スマイミー）
+                </a>
+                <a href="https://manager.suumo.jp/sn/fudousan/shosai/FR351FD001.do?ar=000&bs=040&kskbn=01&kc=169795001&pvscd=23184658274ssor6710DAE416050EA599521F1A7A7132ACAE9" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center px-6 py-3.5 border-2 border-[#2b9000] text-[#2b9000] hover:bg-[#2b9000] hover:text-white font-bold rounded-full transition-all text-sm sm:text-base">
+                    <i class="fa-solid fa-square-arrow-up-right mr-2"></i>
+                    SUUMOで物件検索結果一覧を見る
+                </a>
+                <p class="text-[10px] text-slate-400">※外部サイトへ移動します。</p>
             </div>
         </div>
     </section>
@@ -1013,58 +466,68 @@
     <!-- PROFILE / COMPANY -->
     <section id="profile" class="py-16 md:py-24 bg-white border-t border-slate-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12 md:mb-16">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">COMPANY PROFILE</p>
+            <div class="text-center space-y-4 mb-12 md:mb-16">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Company Profile</span>
                 <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">会社概要・アクセス</h2>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <dl class="lg:col-span-7 bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm divide-y divide-slate-200">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">会社名</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0">有限会社 仁方大森マリーナー</dd>
+                <!-- Company Profile Table -->
+                <div class="lg:col-span-7 bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
+                    <div class="divide-y divide-slate-200">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
+                            <dt class="text-sm font-semibold text-slate-800">会社名</dt>
+                            <dd class="text-sm text-slate-600 sm:col-span-2 mt-1 sm:mt-0 font-light">有限会社 仁方大森マリーナー</dd>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
+                            <dt class="text-sm font-semibold text-slate-800">代表者</dt>
+                            <dd class="text-sm text-slate-600 sm:col-span-2 mt-1 sm:mt-0 font-light">代表取締役 大森 栄作</dd>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
+                            <dt class="text-sm font-semibold text-slate-800">所在地</dt>
+                            <dd class="text-sm text-slate-600 sm:col-span-2 mt-1 sm:mt-0 font-light">
+                                〒737-0821 広島県呉市三条4-7-20-2F
+                            </dd>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
+                            <dt class="text-sm font-semibold text-slate-800">代表電話番号</dt>
+                            <dd class="text-sm text-slate-600 sm:col-span-2 mt-1 sm:mt-0 font-light font-sans">
+                                <a href="tel:0823277600" class="hover:text-miyako font-semibold">0823-27-7600</a>
+                            </dd>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
+                            <dt class="text-sm font-semibold text-slate-800">事業内容</dt>
+                            <dd class="text-sm text-slate-600 sm:col-span-2 mt-1 sm:mt-0 space-y-1.5 font-light">
+                                <div>・不動産売買仲介（戸建、土地、収益マンション、倉庫、工場跡地、事業用土地）</div>
+                                <div>・自社スピード直接買取（状態不問、空き家、空き地）</div>
+                                <div>・賃貸仲介・賃貸管理運営（入居者募集〜清掃、修繕、清算一括代行）</div>
+                                <div>・一括借上げ月極駐車場運営</div>
+                                <div>・損害保険代理業</div>
+                                <div>・建物価値向上リフォーム・リノベーション提案</div>
+                            </dd>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">代表者</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0">代表取締役 大森 栄作</dd>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">所在地</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0">〒737-0821 広島県呉市三条4-7-20-2F</dd>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">電話番号</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0"><a href="tel:0823277600" class="font-bold text-miyako-dark hover:underline">0823-27-7600</a></dd>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">営業時間</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0">9:30〜17:00（日曜・祝日定休）<span class="block text-sm text-slate-500">※ ご予約いただければ、休日・時間外も可能な限り対応いたします。</span></dd>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 p-4 sm:p-6">
-                        <dt class="text-sm font-bold text-slate-800">事業内容</dt>
-                        <dd class="text-base text-slate-700 sm:col-span-2 mt-1 sm:mt-0 space-y-1">
-                            <div>・空き家等管理サービス（呉市内全域）</div>
-                            <div>・不動産売買仲介（戸建、土地、収益マンション、倉庫、工場跡地、事業用土地）</div>
-                            <div>・自社スピード直接買取（状態不問、空き家、空き地）</div>
-                            <div>・賃貸仲介・賃貸管理運営（入居者募集〜清掃、修繕、精算一括代行）</div>
-                            <div>・一括借上げ月極駐車場運営</div>
-                            <div>・損害保険代理業</div>
-                            <div>・建物価値向上リフォーム・リノベーション提案</div>
-                        </dd>
-                    </div>
-                </dl>
+                </div>
+
+                <!-- Office Interior Image Column (PC) -->
                 <div class="lg:col-span-5 space-y-4">
-                    <img src="images/S__3153945_0.jpg" width="1200" height="900" alt="事務所内観" class="w-full aspect-[4/3] object-cover rounded-3xl shadow-md border-4 border-white" loading="lazy" decoding="async">
-                    <div class="bg-miyako-light p-4 rounded-2xl border border-sky-100 text-center space-y-1.5">
-                        <p class="text-sm font-bold text-miyako-dark"><i class="fa-solid fa-door-open mr-1"></i>お気軽にお越しください</p>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            明るい自然光が差し込む打ち合わせカウンターで、空き家や相続、リフォームのお悩みをゆっくりご相談いただけます。
+                    <div class="relative overflow-hidden rounded-3xl shadow-md border-4 border-white aspect-[4/3] bg-slate-200 flex items-center justify-center text-slate-400 text-sm">
+                        <img src="images/S__3153945_0.jpg" alt="事務所内観" loading="lazy" decoding="async" class="w-full h-full object-cover filter brightness-[1.07] contrast-[1.02] saturate-[1.06]">
+                    </div>
+                    <div class="bg-miyako-light/40 p-4 rounded-2xl border border-miyako-light text-center space-y-1.5">
+                        <span class="text-xs font-bold text-miyako-dark block tracking-wider"><i class="fa-solid fa-door-open mr-1"></i>お気軽にお越しください</span>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-light">
+                            明るい自然光が差し込むアットホームな打ち合わせカウンターです。<br>
+                            駐車場や相続、リフォームのお悩みなど、心ゆくまでゆっくりとご相談いただけます。
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 rounded-3xl overflow-hidden shadow-sm border border-slate-100 h-[360px] md:h-[460px] relative">
-                <iframe title="仁方大森マリーナーの地図" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4664.043670555868!2d132.55255704277894!3d34.249124197204246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35500eee2ba4b225%3A0xae2a90624f0b8ad0!2z77yI5pyJ77yJ5LuB5pa55aSn5qOu44Oe44Oq44O844OK!5e0!3m2!1sja!2sjp!4v1781964075170!5m2!1sja!2sjp" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <a href="https://maps.app.goo.gl/GJbxmdJddp7JHuwi8" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 right-4 bg-white/95 px-5 py-3 rounded-full shadow-lg text-sm font-bold text-miyako-dark hover:bg-miyako-dark hover:text-white transition-colors flex items-center border border-slate-100">
+
+            <!-- Google Map Embed - Pointing exactly to business profile on 三条 -->
+            <div class="mt-8 rounded-3xl overflow-hidden shadow-sm border border-slate-100 h-[400px] md:h-[500px] relative group">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4664.043670555868!2d132.55255704277894!3d34.249124197204246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35500eee2ba4b225%3A0xae2a90624f0b8ad0!2z77yI5pyJ77yJ5LuB5pa55aSn5qOu44Oe44Oq44O844OK!5e0!3m2!1sja!2sjp!4v1781964075170!5m2!1sja!2sjp" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a href="https://maps.app.goo.gl/GJbxmdJddp7JHuwi8" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-sm px-5 py-3 rounded-full shadow-lg text-sm font-bold text-miyako-dark hover:bg-miyako hover:text-white transition-all duration-300 flex items-center border border-slate-100 group-hover:scale-105">
                     <i class="fa-solid fa-map-location-dot mr-2 text-lg"></i>大きな地図で見る
                 </a>
             </div>
@@ -1073,179 +536,214 @@
 
     <!-- CONTACT -->
     <section id="contact" class="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-12">
-                <p class="text-sm font-bold tracking-widest text-miyako-dark">CONTACT</p>
-                <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">無料相談・お問い合わせ</h2>
-                <p class="text-base text-slate-600">空き家管理のお見積り、査定依頼、お悩み相談など。秘密厳守・強引な営業は一切いたしません。</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-miyako uppercase">Get In Touch</span>
+                <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">お問い合わせ・お気軽ご相談</h2>
+                <p class="text-xs sm:text-sm text-slate-500 font-light">
+                    査定依頼、お悩み相談、管理のご希望など。秘密厳守・強引な営業は一切行いません。
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-7 md:order-2 bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100">
-                    <form id="contact-form" class="space-y-5" novalidate>
-                        <div>
-                            <label for="form-topic" class="block text-sm font-bold text-slate-800 mb-1.5">ご相談の種類 <span class="text-red-600 text-xs">必須</span></label>
-                            <select id="form-topic" name="topic" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                                <option value="">選択してください</option>
-                                <option value="空き家管理">空き家管理（見積り・ご相談）</option>
-                                <option value="空き家再生・賃貸活用">空き家再生・賃貸活用（リフォームして貸す）</option>
-                                <option value="売却・査定・買取">売却・査定・買取</option>
-                                <option value="賃貸管理">賃貸管理</option>
-                                <option value="駐車場・土地活用">駐車場・土地活用</option>
-                                <option value="リフォーム">リフォーム</option>
-                                <option value="収益物件・資産運用">収益物件・資産運用</option>
-                                <option value="保険">保険</option>
-                                <option value="その他">その他</option>
-                            </select>
-                        </div>
-                        <div id="plan-field" class="hidden">
-                            <label for="form-plan" class="block text-sm font-bold text-slate-800 mb-1.5">ご希望のプラン <span class="text-slate-500 text-xs">任意</span></label>
-                            <select id="form-plan" name="plan" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                                <option value="">まだ決めていない・相談したい</option>
-                                <option value="屋内確認プラン">屋内確認プラン（月額3,300円）</option>
-                                <option value="標準プラン">標準プラン（月額6,600円）</option>
-                                <option value="マンションプラン">マンションプラン（月額3,300円）</option>
-                                <option value="スポット点検">スポット点検（1回5,500円）</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="form-name" class="block text-sm font-bold text-slate-800 mb-1.5">お名前 <span class="text-red-600 text-xs">必須</span></label>
-                            <input type="text" id="form-name" name="name" autocomplete="name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="form-phone" class="block text-sm font-bold text-slate-800 mb-1.5">電話番号 <span class="text-red-600 text-xs">必須</span></label>
-                                <input type="tel" id="form-phone" name="phone" autocomplete="tel" inputmode="tel" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                            </div>
-                            <div>
-                                <label for="form-email" class="block text-sm font-bold text-slate-800 mb-1.5">メールアドレス <span class="text-slate-500 text-xs">任意</span></label>
-                                <input type="email" id="form-email" name="email" autocomplete="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="form-address" class="block text-sm font-bold text-slate-800 mb-1.5">物件の所在地 <span class="text-slate-500 text-xs">任意</span></label>
-                            <input type="text" id="form-address" name="address" placeholder="例）呉市○○町" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base">
-                        </div>
-                        <div>
-                            <label for="form-msg" class="block text-sm font-bold text-slate-800 mb-1.5">ご相談内容 <span class="text-slate-500 text-xs">任意</span></label>
-                            <textarea id="form-msg" name="message" rows="5" placeholder="物件の状況、気になっていること、ご希望の連絡時間帯など、お気軽にお書きください。" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-miyako text-base"></textarea>
-                        </div>
-                        <input type="text" name="_honey" id="form-honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-                        <p id="form-invalid" class="hidden p-3 bg-amber-50 border border-amber-200 text-amber-900 text-sm rounded-xl" role="alert">
-                            「ご相談の種類」「お名前」「電話番号」をご入力ください。
-                        </p>
-                        <p id="toast-success" class="hidden p-3 bg-teal-50 border border-teal-200 text-teal-900 text-sm rounded-xl" role="status">
-                            送信ありがとうございます。担当者より追ってご連絡いたします。
-                        </p>
-                        <p id="toast-error" class="hidden p-3 bg-red-50 border border-red-200 text-red-800 text-sm rounded-xl" role="alert">
-                            送信エラーが発生しました。お手数ですが、お電話（0823-27-7600）またはLINEでお問い合わせください。
-                        </p>
-                        <button type="submit" class="w-full py-4 bg-cta hover:bg-cta-dark text-white rounded-full font-bold text-lg shadow-md transition-colors flex items-center justify-center">
-                            無料で相談する <i class="fa-solid fa-paper-plane ml-2 text-sm"></i>
-                        </button>
-                        <p class="text-xs text-slate-500 text-center">ご入力いただいた個人情報は、お問い合わせへの回答にのみ使用します。</p>
-                    </form>
-                </div>
-
-                <div class="md:col-span-5 md:order-1 space-y-6">
+                <!-- Info Column (Left) -->
+                <div class="md:col-span-5 space-y-6">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4">
-                        <div class="flex items-center gap-3 text-miyako-dark">
+                        <div class="flex items-center space-x-3 text-miyako-dark">
                             <i class="fa-solid fa-phone-volume text-xl"></i>
-                            <h3 class="font-bold text-lg">お電話でのご相談</h3>
+                            <h3 class="font-bold">お電話でのご相談</h3>
                         </div>
-                        <p class="text-sm text-slate-600 leading-relaxed">お急ぎの方は、まずはお電話ください。担当者が直接ご案内します。</p>
-                        <a href="tel:0823277600" class="block text-center py-3 bg-miyako-dark hover:bg-miyako-ocean text-white rounded-full font-bold text-lg shadow-sm transition-colors">
+                        <p class="text-xs text-slate-500 leading-relaxed font-light">
+                            お急ぎの際は、まずはお電話ください。担当者が直接丁寧にご案内します。
+                        </p>
+                        <a href="tel:0823277600" class="block text-center py-3 bg-miyako hover:bg-miyako-dark text-white rounded-full font-bold shadow-sm transition-colors">
                             <i class="fa-solid fa-phone mr-1"></i>0823-27-7600
                         </a>
-                        <p class="text-xs text-slate-500 text-center">受付 9:30〜17:00（日曜・祝日定休）</p>
+                        <p class="text-[10px] text-slate-400 text-center">
+                            営業時間: 9:30〜17:00 / 定休日: 日曜祝日<br>
+                            <span class="font-semibold text-slate-500">※事前にご予約頂ければ、可能な限り対応いたします。</span>
+                        </p>
                     </div>
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4 text-center">
-                        <div class="flex items-center gap-3 text-[#06c755] justify-center">
+
+                    <!-- LINE Official Account -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4 flex flex-col items-center text-center">
+                        <div class="flex items-center space-x-3 text-[#06c755] w-full justify-center">
                             <i class="fa-brands fa-line text-2xl"></i>
-                            <h3 class="font-bold text-lg">LINEで24時間かんたん相談</h3>
+                            <h3 class="font-bold">LINEで24時間かんたん相談</h3>
                         </div>
-                        <p class="text-sm text-slate-600 leading-relaxed text-left">スマホで写真を送るだけで、空き家の状態確認や簡易査定、リフォームのご相談ができます。</p>
-                        <div class="hidden md:flex flex-col items-center">
-                            <img src="images/S_gainfriends_2dbarcodes_BW.png" width="180" height="180" alt="LINE公式アカウントのQRコード" class="w-32 h-32 rounded-lg" loading="lazy">
-                            <span class="text-xs text-slate-500 mt-1">スマホのカメラで読み取り</span>
+                        <p class="text-xs text-slate-500 leading-relaxed font-light text-left">
+                            スマホから写真を送るだけで、簡易査定やリノベーション・リフォームのご相談をおこなえます。
+                        </p>
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100/80 flex flex-col items-center space-y-1.5 shadow-inner">
+                            <img src="images/S_gainfriends_2dbarcodes_BW.png" alt="LINE公式アカウント QRコード" loading="lazy" class="w-28 h-28 sm:w-32 sm:h-32 rounded-lg">
+                            <span class="text-[10px] text-slate-400 font-semibold tracking-wider">スマホのカメラでスキャン</span>
                         </div>
-                        <a href="https://lin.ee/8UhkPSX" target="_blank" rel="noopener noreferrer" class="block py-3 bg-[#06c755] hover:bg-[#05b04b] text-white rounded-full font-bold text-lg shadow-sm transition-colors">
-                            <i class="fa-brands fa-line mr-1"></i>LINEで相談する
+                        <a href="https://lin.ee/8UhkPSX" target="_blank" rel="noopener noreferrer" class="w-full block text-center py-3 bg-[#06c755] hover:bg-[#05b04b] text-white rounded-full font-bold shadow-sm transition-colors">
+                            <i class="fa-brands fa-line mr-1 text-base"></i>公式LINEで相談する
                         </a>
                     </div>
+                </div>
+
+                <!-- Form Column (Right) -->
+                <div class="md:col-span-7 bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">お名前 <span class="text-red-500">*</span></label>
+                            <input type="text" id="form-name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-full focus:outline-none focus:border-miyako text-sm">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">ご連絡先（電話番号） <span class="text-red-500">*</span></label>
+                                <input type="tel" id="form-phone" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-full focus:outline-none focus:border-miyako text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">メールアドレス（任意）</label>
+                                <input type="email" id="form-email" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-full focus:outline-none focus:border-miyako text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">お問い合わせ内容</label>
+                            <textarea id="form-msg" rows="5" placeholder="不動産の売却、賃貸管理の委託、駐車場の相談、リフォームの相談など、お気軽にお書きください。" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-3xl focus:outline-none focus:border-miyako text-sm"></textarea>
+                        </div>
+                        <div id="toast-success" class="hidden p-3 bg-teal-50 border border-teal-200 text-teal-800 text-xs sm:text-sm rounded-2xl">
+                            送信ありがとうございます。追って担当者より早急にご連絡させていただきます。
+                        </div>
+                        <div id="toast-error" class="hidden p-3 bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm rounded-2xl">
+                            送信エラーが発生しました。インターネット接続をご確認いただくか、恐れ入りますがお電話にて直接お問い合わせください。
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center">
+                            上記内容で送信する <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PANORAMA -->
-    <section class="relative h-[22rem] md:h-[32rem] flex items-center justify-center overflow-hidden bg-slate-800">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/EE34DB41-275B-4196-9F8E-2CAEA97A3FBB.jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-miyako-ocean via-miyako-ocean/40 to-black/30"></div>
-        <div class="relative text-center px-4 space-y-3 md:space-y-5">
-            <p class="text-lg md:text-3xl tracking-[0.2em] text-miyako-light serif-text italic font-bold">Connecting Value to the Future.</p>
-            <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-widest serif-text drop-shadow">呉の街と、不動産の未来を繋ぐ。</p>
+    <!-- FULLSCREEN PANORAMA SEA IMAGE (同じフォルダにあれば、大森様のブラウザでは正しく表示されます) -->
+    <section class="relative h-[25rem] md:h-[35rem] flex items-center justify-center overflow-hidden bg-slate-800">
+        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('images/EE34DB41-275B-4196-9F8E-2CAEA97A3FBB.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-miyako-ocean via-miyako-ocean/40 to-black/30 z-10"></div>
+        
+        <div class="relative z-20 text-center px-4 space-y-3 md:space-y-5">
+            <h3 class="text-xl md:text-3xl tracking-[0.25em] font-medium text-miyako-light serif-text italic font-bold">
+                Connecting Value to the Future.
+            </h3>
+            <p class="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-widest serif-text drop-shadow">
+                呉の街と、不動産の未来を繋ぐ。
+            </p>
         </div>
     </section>
-    </main>
 
     <!-- FOOTER -->
-    <footer class="bg-miyako-ocean text-slate-300 py-12">
+    <footer class="bg-miyako-ocean text-slate-400 py-12 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8">
             <div class="md:col-span-5 space-y-4">
-                <span class="text-xs tracking-[0.25em] text-miyako-light font-bold block">NIGATA MARINA</span>
+                <span class="text-xs tracking-[0.25em] text-miyako-light font-semibold block">NIGATA MARINA</span>
                 <span class="text-lg font-bold text-white serif-text tracking-wide block">有限会社 仁方大森マリーナー</span>
-                <p class="text-sm leading-relaxed max-w-sm">
-                    地域に根ざした不動産取引を通じて、呉市とその周辺地域の空き家問題の解決と街の活性化に努めます。35年以上の貸主実績に基づく管理体制とスムーズな直接買取で、大切な資産を次の世代へお繋ぎします。
+                <p class="text-xs text-slate-400 leading-relaxed font-light max-w-sm">
+                    私たちは、地域に根ざした不動産取引を通じて呉市とその周辺地域の空き家問題解決と街の活性化に努めます。35年以上の貸主実績に基づく確かな管理体制と、スムーズな直接買取で、大切な資産を次の世代へお繋ぎいたします。
                 </p>
             </div>
             <div class="md:col-span-3 space-y-4">
-                <h2 class="text-sm font-bold text-white tracking-wider">サイトメニュー</h2>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#akiya" class="hover:text-white">空き家管理サービス</a></li>
-                    <li><a href="#plans" class="hover:text-white">料金プラン</a></li>
-                    <li><a href="#flow" class="hover:text-white">ご利用の流れ</a></li>
-                    <li><a href="#saisei" class="hover:text-white">空き家再生・賃貸活用</a></li>
-                    <li><a href="kaitori.html" class="hover:text-white">空き家買取</a></li>
-                    <li><a href="#faq" class="hover:text-white">よくあるご質問</a></li>
-                    <li><a href="#services" class="hover:text-white">その他の事業</a></li>
-                    <li><a href="#profile" class="hover:text-white">会社概要・アクセス</a></li>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">サイトリンク</h4>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#about" class="hover:text-miyako transition-colors">私たちの想い</a></li>
+                    <li><a href="#services" class="hover:text-miyako transition-colors">主要事業</a></li>
+                    <li><a href="akiya-kanri.html" class="hover:text-miyako transition-colors">空き家管理</a></li>
+                    <li><a href="akiya-saisei.html" class="hover:text-miyako transition-colors">空き家再生・賃貸活用</a></li>
+                    <li><a href="kaitori.html" class="hover:text-miyako transition-colors">空き家買取</a></li>
+                    <li><a href="bukken.html" class="hover:text-miyako transition-colors">物件一覧</a></li>
+                    <li><a href="#profile" class="hover:text-miyako transition-colors">会社概要</a></li>
                 </ul>
             </div>
-            <div class="md:col-span-4 space-y-3 text-sm">
-                <h2 class="text-sm font-bold text-white tracking-wider">お問い合わせ</h2>
+            <div class="md:col-span-4 space-y-4 text-xs font-light">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">お問い合わせ</h4>
                 <p>〒737-0821 広島県呉市三条4-7-20-2F</p>
-                <p>TEL：<a href="tel:0823277600" class="font-bold text-white hover:underline">0823-27-7600</a></p>
-                <p>営業時間：9:30〜17:00（日曜・祝日定休）</p>
-                <p class="text-miyako-light">※ ご予約いただければ、休日・時間外も可能な限り対応いたします。</p>
+                <p>TEL: <a href="tel:0823277600" class="font-bold text-white hover:text-miyako">0823-27-7600</a></p>
+                <p>営業時間: 9:30〜17:00 / 定休日: 日曜・祝日</p>
+                <p class="text-miyako-light font-semibold">※ご予約頂ければ、土曜・祝日・時間外でも柔軟に対応いたします。</p>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/10 text-center text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/5 text-center text-xs text-slate-500 font-light">
             <p>© 2026 有限会社 仁方大森マリーナー All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- PC: 右側の固定お問い合わせタブ -->
-    <a href="#contact" data-topic="空き家管理" class="hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-5 px-3 rounded-l-2xl shadow-lg transition-colors [writing-mode:vertical-rl] tracking-widest text-sm">
-        <i class="fa-regular fa-envelope [writing-mode:horizontal-tb]"></i>無料相談・お問い合わせ
-    </a>
+    <!-- JAVASCRIPT FOR MOBILE INTERACTIONS -->
+    <script>
+        // Menu Toggle functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-    <!-- スマホ: 画面下の固定ボタン -->
-    <nav class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]" aria-label="お問い合わせ">
-        <div class="grid grid-cols-3 gap-2 p-2">
-            <a href="tel:0823277600" class="flex flex-col items-center justify-center py-2 rounded-xl bg-miyako-dark text-white font-bold text-xs">
-                <i class="fa-solid fa-phone text-lg mb-0.5"></i>電話する
-            </a>
-            <a href="https://lin.ee/8UhkPSX" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-2 rounded-xl bg-[#06c755] text-white font-bold text-xs">
-                <i class="fa-brands fa-line text-lg mb-0.5"></i>LINE相談
-            </a>
-            <a href="#contact" data-topic="空き家管理" class="flex flex-col items-center justify-center py-2 rounded-xl bg-cta text-white font-bold text-xs">
-                <i class="fa-regular fa-envelope text-lg mb-0.5"></i>無料相談
-            </a>
-        </div>
-    </nav>
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars text-2xl' : 'fa-solid fa-xmark text-2xl';
+            });
+        }
 
-    <script src="assets/site.js" defer></script>
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Direct Mail Submission Script (FormSubmit)
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const toastSuccess = document.getElementById('toast-success');
+            const toastError = document.getElementById('toast-error');
+
+            toastSuccess.classList.add('hidden');
+            toastError.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '送信中... <i class="fa-solid fa-spinner animate-spin ml-2"></i>';
+
+            const nameVal = document.getElementById('form-name').value;
+            const phoneVal = document.getElementById('form-phone').value;
+            const emailVal = document.getElementById('form-email').value || '未入力';
+            const messageVal = document.getElementById('form-msg').value;
+
+            try {
+                const response = await fetch("https://formsubmit.co/ajax/marina.oomori1@gmail.com", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "お名前": nameVal,
+                        "お電話番号": phoneVal,
+                        "メールアドレス": emailVal,
+                        "お問い合わせ内容": messageVal,
+                        "_subject": "【HPお問い合わせ】有限会社 仁方大森マリーナー"
+                    })
+                });
+
+                if (response.ok) {
+                    event.target.reset();
+                    toastSuccess.classList.remove('hidden');
+                    setTimeout(() => {
+                        toastSuccess.classList.add('hidden');
+                    }, 8000);
+                } else {
+                    toastError.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error("Submission error:", error);
+                toastError.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        }
+    </script>
+    <script src="assets/bukken.js" defer></script>
 </body>
 </html>

@@ -5,14 +5,20 @@
 ## ページ構成
 | ファイル | 内容 |
 |---|---|
-| `index.html` | トップ（空き家管理LP：お悩み→3つの選択肢→料金→流れ→空き家再生・賃貸→FAQ→事業内容→会社概要→お問い合わせ） |
-| `kaitori.html` | 空き家買取ページ |
-| `assets/site.js` | 共通の動き（スマホメニュー、相談種別の自動選択、フォーム送信） |
+| `index.html` | トップページ（会社紹介・事業内容・空き家サービスへの入口・物件一覧・会社概要・お問い合わせ） |
+| `akiya-kanri.html` | 空き家管理のランディングページ（料金プラン・作業内容・流れ・FAQ） |
+| `akiya-saisei.html` | 空き家再生・賃貸活用のランディングページ（リフォームして貸す） |
+| `kaitori.html` | 空き家買取のランディングページ |
+| `bukken.html` | 物件一覧（Googleスプレッドシートから自動表示） |
+| `assets/site.js` | 各ランディングページ共通の動き（スマホメニュー、相談種別の自動選択、フォーム送信） |
+| `assets/bukken.js` | 物件一覧の表示。先頭の `BUKKEN_API_URL` にスプレッドシート連携のURLを設定 |
+| `gas/bukken.gs` | 物件一覧のスプレッドシート用スクリプト（URLを貼ると物件情報を自動取得） |
+| `BUKKEN_SETUP.md` | 物件一覧の設定手順 |
 | `images/` | 画像（幅1400px程度・数百KB以下に縮小して置く） |
 | `robots.txt` / `sitemap.xml` | 検索エンジン向け。ページを増やしたら `sitemap.xml` にも追加 |
 | `hp.html` | 旧バージョン（未使用） |
 
 ## よくある更新
-- **空き家管理の料金を変える**：`index.html` の「PLANS」セクションと「オプション」表、
-  さらに `<head>` 内の構造化データ（`makesOffer` の price）と、`description` の「月額3,300円から」を合わせて直す。
-- **お問い合わせの送信先**：`assets/site.js` の `formsubmit.co/ajax/...` の部分。
+- **物件を載せる**：スプレッドシート「物件一覧」のA列にSUUMO・スマイミーの物件URLを貼る（`BUKKEN_SETUP.md`）
+- **空き家管理の料金を変える**：`akiya-kanri.html` の「PLANS」セクションとオプション表、`<head>` 内の構造化データ（offers の price）と description を合わせて直す
+- **お問い合わせの送信先**：トップページは `index.html` 末尾のスクリプト、ランディングページは `assets/site.js` の `formsubmit.co/ajax/...`

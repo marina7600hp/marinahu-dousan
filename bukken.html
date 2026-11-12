@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>物件一覧｜呉市の売買・賃貸物件｜有限会社仁方大森マリーナー</title>
+    <meta name="description" content="有限会社仁方大森マリーナーがご紹介中の、呉市の売買物件・賃貸物件の一覧です。">
+    <link rel="canonical" href="https://marinahu-dousan.marina-oomori1.workers.dev/bukken.html">
+    <meta name="theme-color" content="#0369a1">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="有限会社 仁方大森マリーナー">
+    <meta property="og:title" content="物件一覧｜有限会社仁方大森マリーナー">
+    <meta property="og:description" content="呉市の売買物件・賃貸物件をご紹介しています。">
+    <meta property="og:url" content="https://marinahu-dousan.marina-oomori1.workers.dev/bukken.html">
+    <meta property="og:image" content="https://marinahu-dousan.marina-oomori1.workers.dev/images/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        miyako: {
+                            light: '#f0f9ff',
+                            sand: '#faf8f5',
+                            DEFAULT: '#0ea5e9',
+                            emerald: '#0d9488',
+                            dark: '#0369a1',
+                            ocean: '#0f172a'
+                        },
+                        cta: {
+                            DEFAULT: '#c2410c',
+                            dark: '#9a3412',
+                            light: '#fff7ed'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #fcfcfc; color: #1e293b; }
+        .serif-text { font-family: 'Noto Serif JP', serif; }
+        [data-bukken-filter][aria-pressed="true"] { background-color: #0369a1; color: #fff; border-color: #0369a1; }
+    </style>
+</head>
+<body id="top" class="overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-4">
+            <a href="./" class="flex flex-col shrink-0">
+                <span class="text-[10px] sm:text-xs tracking-[0.25em] text-miyako-dark font-bold">NIGATA MARINA</span>
+                <span class="text-base sm:text-lg font-bold serif-text tracking-wide text-slate-800">有限会社 仁方大森マリーナー</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6" aria-label="メインメニュー">
+                <a href="./" class="text-sm font-medium text-slate-700 hover:text-miyako-dark">トップ</a>
+                <a href="akiya-kanri.html" class="text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家管理</a>
+                <a href="akiya-saisei.html" class="text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家再生・賃貸</a>
+                <a href="kaitori.html" class="text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家買取</a>
+                <a href="bukken.html" aria-current="page" class="text-sm font-bold text-miyako-dark border-b-2 border-miyako-dark pb-0.5">物件一覧</a>
+                <a href="tel:0823277600" class="inline-flex items-center px-5 py-2.5 text-sm font-bold text-white bg-miyako-dark hover:bg-miyako-ocean rounded-full"><i class="fa-solid fa-phone mr-2"></i>0823-27-7600</a>
+            </nav>
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-700" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-6 shadow-lg absolute w-full left-0">
+            <a href="./" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">トップページ</a>
+            <a href="akiya-kanri.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家管理</a>
+            <a href="akiya-saisei.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家再生・賃貸活用</a>
+            <a href="kaitori.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家買取</a>
+            <a href="./#contact" class="block py-3 text-base font-medium text-slate-700">お問い合わせ</a>
+        </div>
+    </header>
+
+    <main class="pt-24 lg:pt-28 pb-16 md:pb-24 bg-slate-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="text-xs text-slate-500 mb-6" aria-label="パンくずリスト">
+                <a href="./" class="hover:underline">ホーム</a><span class="mx-1">›</span><span>物件一覧</span>
+            </nav>
+            <div class="text-center space-y-3 mb-8">
+                <p class="text-sm font-bold tracking-widest text-miyako-dark">PROPERTIES</p>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">ご紹介中の物件</h1>
+                <p class="text-base text-slate-600">呉市を中心に、売買・賃貸の物件をご紹介しています。</p>
+            </div>
+
+            <div class="flex justify-center gap-2 mb-8" role="group" aria-label="種別で絞り込む">
+                <button type="button" data-bukken-filter="#bukken-all" data-type="" aria-pressed="true" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">すべて</button>
+                <button type="button" data-bukken-filter="#bukken-all" data-type="売買" aria-pressed="false" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">売買</button>
+                <button type="button" data-bukken-filter="#bukken-all" data-type="賃貸" aria-pressed="false" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">賃貸</button>
+            </div>
+
+            <div id="bukken-all" data-bukken-list></div>
+
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-4 text-center">
+                    <p class="font-bold text-slate-900">物件のお問い合わせ・内覧のご予約</p>
+                    <a href="tel:0823277600" class="block py-3 bg-miyako-dark hover:bg-miyako-ocean text-white rounded-full font-bold text-lg"><i class="fa-solid fa-phone mr-1"></i>0823-27-7600</a>
+                    <a href="https://lin.ee/8UhkPSX" target="_blank" rel="noopener noreferrer" class="block py-3 bg-[#06c755] hover:bg-[#05b04b] text-white rounded-full font-bold"><i class="fa-brands fa-line mr-1"></i>LINEで問い合わせる</a>
+                    <p class="text-xs text-slate-500">受付 9:30〜17:00（日曜・祝日定休）</p>
+                </div>
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-4 text-center">
+                    <p class="font-bold text-slate-900">ポータルサイトでも公開中</p>
+                    <a href="https://www.fudohsan.jp/%E4%B8%8D%E5%8B%95%E7%94%A3%E4%BC%9A%E7%A4%BE/3537/%E5%85%A8%E7%89%A9%E4%BB%B6/nav_id/-" target="_blank" rel="noopener noreferrer" class="block py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full font-bold">スマイミーで見る</a>
+                    <a href="https://manager.suumo.jp/sn/fudousan/shosai/FR351FD001.do?ar=000&bs=040&kskbn=01&kc=169795001&pvscd=23184658274ssor6710DAE416050EA599521F1A7A7132ACAE9" target="_blank" rel="noopener noreferrer" class="block py-3 border-2 border-[#2b9000] text-[#2b7a00] hover:bg-[#2b9000] hover:text-white rounded-full font-bold transition-colors">SUUMOで見る</a>
+                    <p class="text-xs text-slate-500">※外部サイトへ移動します。</p>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center text-sm text-slate-600">
+                空き家のご相談は：
+                <a href="akiya-kanri.html" class="font-bold text-miyako-dark underline underline-offset-4 mx-1">管理</a>／
+                <a href="akiya-saisei.html" class="font-bold text-miyako-dark underline underline-offset-4 mx-1">再生・賃貸</a>／
+                <a href="kaitori.html" class="font-bold text-miyako-dark underline underline-offset-4 mx-1">買取</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-miyako-ocean text-slate-300 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:justify-between gap-6 text-sm">
+            <div class="space-y-2">
+                <p class="text-lg font-bold text-white serif-text">有限会社 仁方大森マリーナー</p>
+                <p>〒737-0821 広島県呉市三条4-7-20-2F</p>
+                <p>TEL：<a href="tel:0823277600" class="font-bold text-white hover:underline">0823-27-7600</a>（9:30〜17:00／日曜・祝日定休）</p>
+            </div>
+            <ul class="flex flex-wrap gap-x-5 gap-y-2 md:justify-end md:max-w-sm">
+                <li><a href="./" class="hover:text-white">トップページ</a></li>
+                <li><a href="akiya-kanri.html" class="hover:text-white">空き家管理</a></li>
+                <li><a href="akiya-saisei.html" class="hover:text-white">空き家再生・賃貸活用</a></li>
+                <li><a href="kaitori.html" class="hover:text-white">空き家買取</a></li>
+                <li><a href="./#profile" class="hover:text-white">会社概要</a></li>
+            </ul>
+        </div>
+        <p class="mt-8 text-center text-xs text-slate-400">© 2026 有限会社 仁方大森マリーナー All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/site.js" defer></script>
+    <script src="assets/bukken.js" defer></script>
+</body>
+</html>
