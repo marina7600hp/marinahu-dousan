@@ -33,7 +33,7 @@ const BUKKEN_API_URL = '';
             + (img ? `<img src="${esc(img)}" alt="${esc(item.title)}" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : '');
         const specs = [item.layout, item.area].filter(Boolean).map(esc).join('<span class="mx-1.5 text-slate-300">|</span>');
         return `
-        <article class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+        <article class="relative bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
             <div class="relative aspect-[4/3] bg-slate-100">${photo}${badge}</div>
             <div class="p-5 flex-1 flex flex-col">
                 <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">${esc(item.title) || '物件情報'}</h3>
@@ -59,6 +59,26 @@ const BUKKEN_API_URL = '';
         if (limit > 0) list = list.slice(0, limit);
         if (!list.length) {
             message(el, '現在ご紹介できる物件はありません。<br>物件のお探し・ご相談はお気軽にお問い合わせください。');
+            return;
+        }
+        if (el.dataset.layout === 'scroll') {
+            // 横スクロール（トップページ用）
+            el.innerHTML = `
+            <div class="relative">
+                <div data-scroller class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 [scrollbar-width:thin]" tabindex="0" aria-label="ご紹介中の物件（横にスクロールできます）">
+                    ${list.map((i) => `<div class="snap-start shrink-0 w-[82%] sm:w-[46%] lg:w-[31.5%] flex [&>article]:w-full">${card(i)}</div>`).join('')}
+                </div>
+                ${list.length > 3 ? `
+                <button type="button" data-dir="-1" aria-label="前の物件" class="hidden md:flex absolute -left-4 top-[35%] w-11 h-11 items-center justify-center rounded-full bg-white/95 border border-slate-200 shadow-md text-slate-700 hover:bg-white"><i class="fa-solid fa-chevron-left"></i></button>
+                <button type="button" data-dir="1" aria-label="次の物件" class="hidden md:flex absolute -right-4 top-[35%] w-11 h-11 items-center justify-center rounded-full bg-white/95 border border-slate-200 shadow-md text-slate-700 hover:bg-white"><i class="fa-solid fa-chevron-right"></i></button>` : ''}
+            </div>
+            ${list.length > 1 ? '<p class="mt-1 text-center text-xs text-slate-500 md:hidden"><i class="fa-solid fa-arrows-left-right mr-1"></i>横にスクロールすると、ほかの物件も見られます</p>' : ''}`;
+            const scroller = el.querySelector('[data-scroller]');
+            el.querySelectorAll('button[data-dir]').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    scroller.scrollBy({ left: Number(btn.dataset.dir) * scroller.clientWidth * 0.9, behavior: 'smooth' });
+                });
+            });
             return;
         }
         el.innerHTML = `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${list.map(card).join('')}</div>`;
