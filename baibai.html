@@ -94,6 +94,7 @@
                 <a href="#sell" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">売りたい方</a>
                 <a href="#buy" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">買いたい方</a>
                 <a href="#strengths" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">選ばれる理由</a>
+                <a href="#industrial" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">工場・倉庫</a>
                 <a href="#flow" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">流れ</a>
                 <a href="#faq" class="text-sm font-medium text-slate-700 hover:text-miyako-dark transition-colors">よくある質問</a>
             </nav>
@@ -112,6 +113,7 @@
             <a href="#sell" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">売りたい方</a>
             <a href="#buy" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">買いたい方</a>
             <a href="#strengths" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">選ばれる理由</a>
+            <a href="#industrial" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">工場・倉庫</a>
             <a href="#flow" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">売却・購入の流れ</a>
             <a href="#faq" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">よくある質問</a>
             <a href="bukken.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">物件一覧</a>
@@ -141,6 +143,12 @@
                     <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl mx-auto lg:mx-0">
                         一戸建て、マンション、土地から工場・倉庫まで、適正な市場価格でスムーズに仲介します。地元ならではの深い土地勘で、最適な売却時期をご提案します。
                     </p>
+                    <ul class="flex flex-wrap justify-center lg:justify-start gap-2" aria-label="取扱物件">
+                        <li class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-700"><i class="fa-solid fa-house-chimney text-miyako-dark mr-1"></i>一戸建て</li>
+                        <li class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-700"><i class="fa-solid fa-building text-miyako-dark mr-1"></i>分譲マンション</li>
+                        <li class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-700"><i class="fa-solid fa-map text-miyako-dark mr-1"></i>土地・事業用地</li>
+                        <li class="px-3 py-1.5 rounded-full bg-miyako-dark text-sm font-bold text-white"><i class="fa-solid fa-industry mr-1"></i>工場・倉庫</li>
+                    </ul>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
                         <a href="#contact" data-topic="売却・査定（仲介）" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-cta hover:bg-cta-dark text-white text-lg font-bold rounded-full shadow-md transition-colors">
                             売却の無料査定を依頼する<i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
@@ -155,12 +163,10 @@
                     </p>
                 </div>
                 <div class="lg:col-span-6">
-                    <ul class="grid grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto">
-                        <li class="bg-white rounded-3xl border border-slate-100 shadow-md p-6 text-center"><i class="fa-solid fa-house-chimney text-4xl text-miyako-dark"></i><p class="mt-3 font-bold text-slate-900">一戸建て</p></li>
-                        <li class="bg-white rounded-3xl border border-slate-100 shadow-md p-6 text-center"><i class="fa-solid fa-building text-4xl text-miyako-dark"></i><p class="mt-3 font-bold text-slate-900">分譲マンション</p></li>
-                        <li class="bg-white rounded-3xl border border-slate-100 shadow-md p-6 text-center"><i class="fa-solid fa-map text-4xl text-miyako-dark"></i><p class="mt-3 font-bold text-slate-900">土地・事業用地</p></li>
-                        <li class="bg-white rounded-3xl border-2 border-miyako-dark/30 shadow-md p-6 text-center"><i class="fa-solid fa-industry text-4xl text-miyako-dark"></i><p class="mt-3 font-bold text-slate-900">工場・倉庫</p><p class="text-xs text-miyako-dark font-bold mt-1">得意分野</p></li>
-                    </ul>
+                    <figure class="relative mx-auto max-w-xl">
+                        <img src="images/kojo-soko-01.jpg" width="1600" height="1200" alt="天井の高い倉庫の内観。広いコンクリートの床とシャッター2か所" class="w-full aspect-[4/3] object-cover rounded-3xl shadow-xl border-4 border-white" fetchpriority="high">
+                        <figcaption class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold bg-white/95 text-miyako-dark px-3 py-1.5 rounded-full shadow"><i class="fa-solid fa-industry"></i>工場・倉庫も得意分野です</figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -223,6 +229,48 @@
                     <span class="shrink-0 w-14 h-14 rounded-2xl bg-sky-50 text-miyako-dark flex items-center justify-center text-2xl"><i class="fa-solid fa-scale-balanced"></i></span>
                     <div class="space-y-2"><h3 class="text-lg sm:text-xl font-bold text-slate-900">仲介だけでなく、買取・賃貸も比べられる</h3><p class="text-base text-slate-700 leading-relaxed">自社での直接買取、リフォームして貸す、駐車場にするなど、売る以外の方法も含めてご提案します。</p></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACTORY & WAREHOUSE -->
+    <section id="industrial" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-10">
+                <p class="text-sm font-bold tracking-widest text-miyako-dark">FACTORY &amp; WAREHOUSE</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold serif-text text-slate-900">工場・倉庫など、<br class="sm:hidden">事業用不動産もお任せください</h2>
+                <p class="text-base text-slate-600 max-w-3xl mx-auto">天井クレーンのある工場や大型の倉庫など、事業用不動産の売却・購入・賃貸のご相談を承ります。用途や広さ、搬入のしやすさなども含めてご提案します。</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                <figure class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-100 bg-slate-100">
+                    <a href="images/kojo-soko-05.jpg" target="_blank" rel="noopener" aria-label="天井クレーンのある工場の写真を大きく見る">
+                        <img src="images/kojo-soko-05.jpg" width="1600" height="1200" alt="天井クレーンのフックが下がる工場の内観" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white text-sm sm:text-base font-bold px-4 pt-8 pb-3">天井クレーンのある工場</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-100 bg-slate-100">
+                    <a href="images/kojo-soko-03.jpg" target="_blank" rel="noopener" aria-label="鉄骨造の大型工場の写真を大きく見る">
+                        <img src="images/kojo-soko-03.jpg" width="1600" height="1200" alt="鉄骨造の大型工場の内観。奥に大きな搬入口" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white text-sm sm:text-base font-bold px-4 pt-8 pb-3">鉄骨造の大型工場</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-100 bg-slate-100">
+                    <a href="images/kojo-soko-02.jpg" target="_blank" rel="noopener" aria-label="広い床面積の工場の写真を大きく見る">
+                        <img src="images/kojo-soko-02.jpg" width="1350" height="1125" alt="2階から見下ろした広い工場の内観" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white text-sm sm:text-base font-bold px-4 pt-8 pb-3">広い床面積の工場</figcaption>
+                </figure>
+                <figure class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-100 bg-slate-100">
+                    <a href="images/kojo-soko-04.jpg" target="_blank" rel="noopener" aria-label="工場内の通路の写真を大きく見る">
+                        <img src="images/kojo-soko-04.jpg" width="1600" height="1200" alt="天窓から光が入る工場内の通路" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white text-sm sm:text-base font-bold px-4 pt-8 pb-3">工場内の通路</figcaption>
+                </figure>
+            </div>
+            <p class="mt-3 text-xs text-slate-500 text-right">写真をタップすると大きく表示されます。</p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="#contact" data-topic="売却・査定（仲介）" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-cta hover:bg-cta-dark text-white font-bold rounded-full shadow-md transition-colors">工場・倉庫の売却を相談する<i class="fa-solid fa-arrow-right ml-2 text-sm"></i></a>
+                <a href="#contact" data-topic="購入・物件探し" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-50 text-miyako-dark border border-sky-200 font-bold rounded-full transition-colors">工場・倉庫を探している</a>
             </div>
         </div>
     </section>
