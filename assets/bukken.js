@@ -122,8 +122,14 @@ const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJ
     fetch(apiUrl)
         .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then((data) => {
-            // 物件名が入っていない行（自動取得できなかった行など）は表示しない
-            cache = (Array.isArray(data.items) ? data.items : []).filter((i) => i && String(i.title || '').trim());
+            // 物件名が入っていない行（自動取得できなかった行など）は表示しない。
+            // 種別はページ名からも判定（スプレッドシートの種別が誤っていても、売買の物件は売買に出す）
+            cache = (Array.isArray(data.items) ? data.items : []).filter((i) => i && String(i.title || '').trim()).map((i) => {
+                if (/(売土地|売り地|売マンション|売戸建|売家|売店舗|売事務所|売倉庫|売工場|売ビル)/.test(String(i.title)) && i.type !== '売買') {
+                    return Object.assign({}, i, { type: '売買', price: String(i.price || '').replace(/^月額\s*/, '') });
+                }
+                return i;
+            });
             lists.forEach((el) => render(el, cache));
         })
         .catch((err) => {

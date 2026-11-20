@@ -206,11 +206,14 @@ function parseListing_(html, url, pageText) {
 
   // 種別（「価 格」のように間に空白が入っていても判定できるよう、空白を除いて調べる）
   const flat = text.replace(/\s+/g, '');
+  // ページ名（「売マンションの詳細情報」など）で判定できるときは、それを最優先にする
+  const SALE_WORDS = /(売土地|売り地|売地|中古|新築|売マンション|売戸建|売家|売店舗|売事務所|売倉庫|売工場|売ビル)/;
+  const RENT_WORDS = /(賃貸|貸家|貸し家|貸アパート|貸マンション|貸店舗|貸事務所|貸倉庫|貸し倉庫|貸工場|貸地|駐車場)/;
   let type = '';
-  if (/suumo\.jp\/(chintai|jj\/chintai)/i.test(url) || /(賃貸|貸家|貸アパート|貸マンション|貸店舗|貸事務所|貸倉庫|貸工場|貸地)/.test(rawTitle) ||
-      (/(賃料|家賃)/.test(flat) && !/価格/.test(flat))) type = '賃貸';
-  else if (/suumo\.jp\/(ikkodate|chukoikkodate|ms|tochi|jj\/bukken)/i.test(url) || /価格/.test(flat) ||
-      /(売土地|売り地|売地|中古|新築|売マンション|売店舗|売事務所|売倉庫|売工場|売ビル|売家)/.test(rawTitle)) type = '売買';
+  if (SALE_WORDS.test(rawTitle)) type = '売買';
+  else if (RENT_WORDS.test(rawTitle)) type = '賃貸';
+  else if (/suumo\.jp\/(chintai|jj\/chintai)/i.test(url) || (/(賃料|家賃)/.test(flat) && !/価格/.test(flat))) type = '賃貸';
+  else if (/suumo\.jp\/(ikkodate|chukoikkodate|ms|tochi|jj\/bukken)/i.test(url) || /価格/.test(flat)) type = '売買';
 
   title = decodeEntities_(title).split(/\s*[|｜]\s*/)[0].replace(/【[^】]*(SUUMO|スーモ|スマイミー|不動産)[^】]*】/g, '');
   title = title.split('／')[0].replace(/（[^（）]*提供）/g, '').trim();
@@ -382,14 +385,12 @@ function doPost(e) {
     const row = findRowForUrl_(sheet, url);
     const isNew = String(sheet.getRange(row, COL.url).getValue()).trim() === '';
     if (isNew) sheet.getRange(row, COL.url).setValue(url);
-    // 以前のボタンで入った「会社の写真」「長いページ名」は、新しい内容に入れ替える
+    // 以前のボタンで入った「会社の写真」は消す（新しい写真が取れなかったときも残さない）
     const imgCell = sheet.getRange(row, COL.image);
     if (isCompanyPhoto_(imgCell.getValue())) imgCell.setValue('');
-    const titleCell = sheet.getRange(row, COL.title);
-    if (/の詳細情報|スマイミー\s*$/.test(String(titleCell.getValue()))) titleCell.setValue('');
-    const missing = writeInfo_(sheet, row, info, false, true);
+    const missing = writeInfo_(sheet, row, info, true, true);
     SpreadsheetApp.flush();
-    return resultPage_(true, (isNew ? row + '行目に追加しました。' : row + '行目（同じURLの行）を更新しました。')
+    return resultPage_(true, (isNew ? row + '行目に追加しました。' : row + '行目（同じURLの行）をページの内容で更新しました。')
       + (missing.length ? '<br>取れなかった項目：' + missing.join('・') + '（スプレッドシートで手入力してください）' : ''), info);
   } catch (err) {
     return resultPage_(false, 'エラー：' + err.message);
