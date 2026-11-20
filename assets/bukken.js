@@ -16,6 +16,15 @@ const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJ
         .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     const safeUrl = (u) => (/^https:\/\//i.test(String(u || '')) ? String(u) : '');
 
+    // スマイミーの会社（掲載店）写真は物件写真として使わない
+    const isCompanyPhoto = (u) => /fudohsan\.jp\/m_img\//i.test(String(u || ''));
+    // スマイミーの長いページ名を短くする：「売土地・売り地の詳細情報 呉市海岸２丁目の売土地・売り地 スマイミー」→「呉市海岸２丁目 売土地」
+    const cleanTitle = (t) => {
+        let s = String(t || '').replace(/^\S*の詳細情報\s*/, '').replace(/\s*(スマイミー|SUUMO)\s*$/i, '').trim();
+        const m = s.match(/^(\S*?(?:市|町|丁目|村)\S*?)の(\S+)$/);
+        return m ? m[1] + ' ' + m[2].split('・')[0] : s;
+    };
+
     const sourceLabel = (url) => {
         if (/suumo\.jp/i.test(url)) return 'SUUMO';
         if (/fudohsan\.jp/i.test(url)) return 'スマイミー';
@@ -24,7 +33,8 @@ const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJ
 
     function card(item) {
         const url = safeUrl(item.url);
-        const img = safeUrl(item.image);
+        const img = isCompanyPhoto(item.image) ? '' : safeUrl(item.image);
+        item = Object.assign({}, item, { title: cleanTitle(item.title) });
         const isRent = item.type === '賃貸';
         const badge = item.type
             ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white ${isRent ? 'bg-sky-700' : 'bg-teal-700'}">${esc(item.type)}</span>`

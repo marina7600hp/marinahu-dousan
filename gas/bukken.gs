@@ -257,7 +257,7 @@ function parseListing_(html, url, pageText) {
   // 写真
   let image = meta('og:image');
   if (!image) image = findPhoto_(html);
-  if (image && !/^https?:/i.test(image)) image = '';
+  if (image && (!/^https?:/i.test(image) || isCompanyPhoto_(image))) image = '';
 
   return {
     type: type,
@@ -268,6 +268,25 @@ function parseListing_(html, url, pageText) {
     area: area,
     image: image,
   };
+}
+
+/** スマイミーの会社（掲載店）写真かどうか */
+function isCompanyPhoto_(u) {
+  return /fudohsan\.jp\/m_img\//i.test(String(u || ''));
+}
+
+/** 物件番号入りの写真を優先して選ぶ（スマイミーは /img/物件番号/ が物件写真） */
+function pickPhoto_(url, candidates, current) {
+  let decoded = url;
+  try { decoded = decodeURIComponent(url); } catch (e) { /* そのまま */ }
+  const id = (decoded.match(/物件\/(\d+)/) || [])[1];
+  const ok = (u) => /^https:\/\//i.test(u) && !isCompanyPhoto_(u);
+  if (id) {
+    const own = candidates.find((u) => ok(u) && u.indexOf('/' + id + '/') >= 0);
+    if (own) return own;
+  }
+  if (ok(current || '')) return current;
+  return candidates.find(ok) || '';
 }
 
 /** og:image がないページ用：本文中の物件写真らしき画像を探す（SUUMOは rel / data-src に写真URLがある） */
@@ -306,12 +325,14 @@ function bookmarkletCode_(key) {
   const js = "(function(){"
     + "var h=location.hostname;"
     + "if(!/(^|\\.)(fudohsan\\.jp|suumo\\.jp)$/i.test(h)){alert('スマイミー（またはSUUMO）の物件ページを開いてから押してください');return;}"
-    + "var best='',bs=0;"
+    + "var best='',bs=0,c=[];"
     + "Array.prototype.forEach.call(document.images,function(i){var s=i.currentSrc||i.src||'';var w=i.naturalWidth||0,a=w*(i.naturalHeight||0);"
-    + "if(/^https:/.test(s)&&w>=240&&a>bs&&!/logo|icon|banner|btn|button|sprite|common|qr|map/i.test(s)){bs=a;best=s;}});"
+    + "if(/^https:/.test(s)&&w>=150&&!/logo|icon|banner|btn|button|sprite|common|qr|map/i.test(s)){c.push([a,s]);if(a>bs){bs=a;best=s;}}});"
+    + "c.sort(function(x,y){return y[0]-x[0];});"
     + "var f=document.createElement('form');f.method='POST';f.action=" + JSON.stringify(WEBAPP_URL) + ";f.target='_blank';f.acceptCharset='UTF-8';f.style.display='none';"
     + "function add(n,v){var t=document.createElement('textarea');t.name=n;t.value=v;f.appendChild(t);}"
     + "add('action','add');add('key'," + JSON.stringify(key) + ");add('url',location.href);add('image',best);"
+    + "add('images',c.map(function(x){return x[1];}).filter(function(s,n,a){return a.indexOf(s)===n;}).slice(0,40).join('\\n'));"
     + "add('head',document.head?document.head.outerHTML.slice(0,200000):'');"
     + "add('text',(document.body&&document.body.innerText||'').slice(0,300000));"
     + "document.body.appendChild(f);f.submit();setTimeout(function(){f.remove();},1000);"
@@ -355,11 +376,17 @@ function doPost(e) {
   try {
     const sheet = getSheet_();
     const info = parseListing_(String(p.head || ''), url, String(p.text || ''));
-    const hint = String(p.image || '');
-    if (!info.image && /^https:\/\//i.test(hint)) info.image = hint;
+    const candidates = String(p.images || '').split('\n').map((s) => s.trim()).filter(Boolean);
+    if (p.image) candidates.push(String(p.image));
+    info.image = pickPhoto_(url, candidates, info.image);
     const row = findRowForUrl_(sheet, url);
     const isNew = String(sheet.getRange(row, COL.url).getValue()).trim() === '';
     if (isNew) sheet.getRange(row, COL.url).setValue(url);
+    // 以前のボタンで入った「会社の写真」「長いページ名」は、新しい内容に入れ替える
+    const imgCell = sheet.getRange(row, COL.image);
+    if (isCompanyPhoto_(imgCell.getValue())) imgCell.setValue('');
+    const titleCell = sheet.getRange(row, COL.title);
+    if (/の詳細情報|スマイミー\s*$/.test(String(titleCell.getValue()))) titleCell.setValue('');
     const missing = writeInfo_(sheet, row, info, false, true);
     SpreadsheetApp.flush();
     return resultPage_(true, (isNew ? row + '行目に追加しました。' : row + '行目（同じURLの行）を更新しました。')
