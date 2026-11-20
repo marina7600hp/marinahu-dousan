@@ -62,32 +62,55 @@
 <body id="top" class="overflow-x-hidden">
 
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-4">
-            <a href="./" class="flex flex-col shrink-0">
-                <span class="text-[10px] sm:text-xs tracking-[0.25em] text-miyako-dark font-bold">NIGATA MARINA</span>
-                <span class="text-base sm:text-lg font-bold serif-text tracking-wide text-slate-800">有限会社 仁方大森マリーナー</span>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./" class="flex flex-col group">
+                <span class="text-xs tracking-[0.25em] text-miyako-dark font-bold">NIGATA MARINA</span>
+                <span class="text-lg font-bold serif-text tracking-wide text-slate-800">有限会社 仁方大森マリーナー</span>
             </a>
-            <nav class="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap" aria-label="メインメニュー">
-                <a href="./" class="text-[13px] xl:text-sm font-medium text-slate-700 hover:text-miyako-dark">トップ</a>
-                <a href="baibai.html" class="text-[13px] xl:text-sm font-medium text-slate-700 hover:text-miyako-dark">売買・仲介</a>
-                <a href="akiya-kanri.html" class="text-[13px] xl:text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家管理</a>
-                <a href="akiya-saisei.html" class="text-[13px] xl:text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家再生・賃貸</a>
-                <a href="kaitori.html" class="text-[13px] xl:text-sm font-medium text-slate-700 hover:text-miyako-dark">空き家買取</a>
-                <a href="bukken.html" aria-current="page" class="text-[13px] xl:text-sm font-bold text-miyako-dark border-b-2 border-miyako-dark pb-0.5">物件一覧</a>
-                <a href="tel:0823277600" class="inline-flex items-center px-5 py-2.5 text-sm font-bold text-white bg-miyako-dark hover:bg-miyako-ocean rounded-full"><i class="fa-solid fa-phone mr-2"></i>0823-27-7600</a>
+
+            <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 whitespace-nowrap">
+                <a href="./#about" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">私たちの想い</a>
+                <a href="./#services" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">事業内容</a>
+                <a href="baibai.html" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">売買・仲介</a>
+                <a href="akiya-kanri.html" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">空き家管理</a>
+                <a href="akiya-saisei.html" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">空き家再生</a>
+                <a href="bukken.html" aria-current="page" class="text-[13px] xl:text-sm font-bold text-miyako-dark border-b-2 border-miyako-dark pb-0.5">物件案内</a>
+                <a href="kaisha.html" class="text-[13px] xl:text-sm font-medium text-slate-600 hover:text-miyako transition-colors">会社概要</a>
+                <a href="./#contact" class="inline-flex items-center justify-center px-4 xl:px-5 py-2.5 text-[13px] xl:text-sm font-medium text-white bg-miyako hover:bg-miyako-dark transition-all rounded-full shadow-sm">お問い合わせ</a>
             </nav>
-            <button id="menu-btn" class="lg:hidden p-2 text-slate-700" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+
+            <div class="hidden md:flex flex-col text-right lg:hidden xl:flex">
+                <span class="text-xs text-slate-500">お電話でのお問い合わせ</span>
+                <a href="tel:0823277600" class="text-lg font-bold text-miyako-dark hover:text-miyako transition-colors">
+                    <i class="fa-solid fa-phone mr-1"></i>0823-27-7600
+                </a>
+                <span class="text-[10px] text-slate-400">9:30〜17:00 / 日曜祝日定休</span>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-miyako focus:outline-none" aria-label="メニューを開く">
                 <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-6 shadow-lg absolute w-full left-0">
-            <a href="./" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">トップページ</a>
-            <a href="baibai.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">不動産売買・仲介</a>
-            <a href="akiya-kanri.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家管理</a>
-            <a href="akiya-saisei.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家再生・賃貸活用</a>
-            <a href="kaitori.html" class="block py-3 text-base font-medium text-slate-700 border-b border-slate-50">空き家買取</a>
-            <a href="./#contact" class="block py-3 text-base font-medium text-slate-700">お問い合わせ</a>
+
+        <!-- MOBILE NAV MENU -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-4 pb-6 space-y-3 shadow-lg absolute w-full left-0 transition-all duration-300">
+            <a href="./#about" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">私たちの想い</a>
+            <a href="./#services" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">事業内容</a>
+            <a href="baibai.html" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">不動産売買・仲介</a>
+            <a href="akiya-kanri.html" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">空き家管理</a>
+            <a href="akiya-saisei.html" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">空き家再生・賃貸活用</a>
+            <a href="kaitori.html" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">空き家買取</a>
+            <a href="bukken.html" aria-current="page" class="block py-2 text-base font-bold text-miyako-dark">物件案内</a>
+            <a href="kaisha.html" class="block py-2 text-base font-medium text-slate-700 hover:text-miyako transition-colors">会社概要</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3">
+                <a href="tel:0823277600" class="flex items-center justify-center py-3 bg-slate-50 text-slate-800 rounded-md font-bold">
+                    <i class="fa-solid fa-phone mr-2 text-miyako"></i>0823-27-7600
+                </a>
+                <a href="./#contact" class="flex items-center justify-center py-3 bg-miyako text-white rounded-md font-medium shadow-sm">
+                    お問い合わせフォーム
+                </a>
+            </div>
         </div>
     </header>
 

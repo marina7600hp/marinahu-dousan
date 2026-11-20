@@ -7,6 +7,8 @@
     if (menuBtn && mobileMenu) {
         const setMenu = (open) => {
             mobileMenu.classList.toggle('hidden', !open);
+            // メニューを開いている間は、画面下の固定ボタンを隠す（メニュー下部と重ならないように）
+            document.querySelectorAll('[data-sp-cta]').forEach((el) => el.classList.toggle('hidden', open));
             menuBtn.setAttribute('aria-expanded', String(open));
             menuIcon.className = open ? 'fa-solid fa-xmark text-2xl' : 'fa-solid fa-bars text-2xl';
         };
