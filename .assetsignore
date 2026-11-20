@@ -1,7 +1,7 @@
 # HPとして公開しないファイル
 .git
 .assetsignore
-wrangler.jsonc
-worker
-node_modules
+.gitignore
 .wrangler
+wrangler.jsonc
+node_modules
