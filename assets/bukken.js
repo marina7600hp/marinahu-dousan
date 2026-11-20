@@ -95,7 +95,8 @@ const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJ
     fetch(apiUrl)
         .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then((data) => {
-            cache = Array.isArray(data.items) ? data.items : [];
+            // 物件名が入っていない行（自動取得できなかった行など）は表示しない
+            cache = (Array.isArray(data.items) ? data.items : []).filter((i) => i && String(i.title || '').trim());
             lists.forEach((el) => render(el, cache));
         })
         .catch((err) => {
