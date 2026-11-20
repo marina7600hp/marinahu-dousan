@@ -2,7 +2,7 @@
 // ─────────────────────────────────────────────
 // ▼ ここに、Google Apps Script を「ウェブアプリ」として公開したURLを貼ってください。
 //   （手順は BUKKEN_SETUP.md を参照）
-const BUKKEN_API_URL = '';
+const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJN0YGnnB6upADt4A7VJGVDC13lAzU3YbLiVKItlhOsHiAsBXGwMP/exec';
 // ─────────────────────────────────────────────
 
 (function () {
