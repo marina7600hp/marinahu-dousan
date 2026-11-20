@@ -52,10 +52,27 @@ const BUKKEN_API_URL = 'https://script.google.com/macros/s/AKfycbyvdBXvXkEkezLCJ
         el.innerHTML = `<div class="max-w-xl mx-auto text-center bg-white rounded-3xl border border-slate-100 p-8 text-sm sm:text-base text-slate-600">${html}</div>`;
     }
 
+    // 「すべて」のときは、売買・賃貸を交互に並べる（どちらかが多くても、もう一方が埋もれないように）
+    function mixByType(items) {
+        const order = ['売買', '賃貸'];
+        const groups = {};
+        items.forEach((i) => {
+            const t = i.type || 'その他';
+            if (!groups[t]) groups[t] = [];
+            groups[t].push(i);
+        });
+        const keys = order.filter((t) => groups[t]).concat(Object.keys(groups).filter((t) => order.indexOf(t) < 0));
+        const out = [];
+        for (let n = 0; out.length < items.length; n++) {
+            keys.forEach((t) => { if (groups[t][n]) out.push(groups[t][n]); });
+        }
+        return out;
+    }
+
     function render(el, items) {
         const limit = parseInt(el.dataset.limit || '0', 10);
         const type = el.dataset.type || '';
-        let list = type ? items.filter((i) => i.type === type) : items;
+        let list = type ? items.filter((i) => i.type === type) : (el.dataset.mix === 'type' ? mixByType(items) : items);
         if (limit > 0) list = list.slice(0, limit);
         if (!list.length) {
             message(el, '現在ご紹介できる物件はありません。<br>物件のお探し・ご相談はお気軽にお問い合わせください。');

@@ -200,21 +200,30 @@ function parseListing_(html, url, pageText) {
       .replace(/<[^>]+>/g, ' ')
   )).replace(/[\s　]+/g, ' ');
 
-  // 種別
-  let type = '';
-  if (/suumo\.jp\/(chintai|jj\/chintai)/i.test(url) || /賃料/.test(text) && !/価格/.test(text)) type = '賃貸';
-  else if (/suumo\.jp\/(ikkodate|chukoikkodate|ms|tochi|jj\/bukken)/i.test(url) || /価格/.test(text)) type = '売買';
-
-  // 物件名
+  // 物件名（元の文字）
   let title = meta('og:title') || ((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
+  const rawTitle = decodeEntities_(title);
+
+  // 種別（「価 格」のように間に空白が入っていても判定できるよう、空白を除いて調べる）
+  const flat = text.replace(/\s+/g, '');
+  let type = '';
+  if (/suumo\.jp\/(chintai|jj\/chintai)/i.test(url) || /(賃貸|貸家|貸アパート|貸マンション|貸店舗|貸事務所|貸倉庫|貸工場|貸地)/.test(rawTitle) ||
+      (/(賃料|家賃)/.test(flat) && !/価格/.test(flat))) type = '賃貸';
+  else if (/suumo\.jp\/(ikkodate|chukoikkodate|ms|tochi|jj\/bukken)/i.test(url) || /価格/.test(flat) ||
+      /(売土地|売り地|売地|中古|新築|売マンション|売店舗|売事務所|売倉庫|売工場|売ビル|売家)/.test(rawTitle)) type = '売買';
+
   title = decodeEntities_(title).split(/\s*[|｜]\s*/)[0].replace(/【[^】]*(SUUMO|スーモ|スマイミー|不動産)[^】]*】/g, '');
   title = title.split('／')[0].replace(/（[^（）]*提供）/g, '').trim();
+  // スマイミー：「売土地・売り地の詳細情報 呉市広町田１丁目の売土地・売り地 スマイミー」→「呉市広町田１丁目 売土地」
+  title = title.replace(/^\S*の詳細情報\s*/, '').replace(/\s*(スマイミー|SUUMO)\s*$/i, '').trim();
+  const loc = title.match(/^(\S*?(?:市|町|丁目|村)\S*?)の(\S+)$/);
+  if (loc) title = loc[1] + ' ' + loc[2].split('・')[0];
 
   // 価格・賃料
   const yen = '([0-9０-９][0-9０-９,，.．]*\\s*(?:億\\s*[0-9０-９,，]*\\s*)?万円)';
   const pick = (labels) => {
     for (const label of labels) {
-      const m = text.match(new RegExp(label + '[^0-9０-９]{0,15}' + yen));
+      const m = text.match(new RegExp(label.split('').join('\\s*') + '[^0-9０-９]{0,15}' + yen));
       if (m) return m[1].replace(/\s+/g, '');
     }
     return '';

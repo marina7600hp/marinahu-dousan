@@ -83,6 +83,7 @@
         .serif-text {
             font-family: 'Noto Serif JP', serif;
         }
+        [data-bukken-filter][aria-pressed="true"] { background-color: #0369a1; color: #fff; border-color: #0369a1; }
     </style>
 </head>
 <body class="overflow-x-hidden selection:bg-miyako/10 selection:text-miyako-dark">
@@ -448,7 +449,12 @@
                 <h2 class="text-2xl sm:text-3xl font-bold serif-text text-slate-900">現在ご紹介中の物件</h2>
             </div>
 
-            <div data-bukken-list data-limit="12" data-layout="scroll"></div>
+            <div class="flex justify-center gap-2 mb-6" role="group" aria-label="種別で絞り込む">
+                <button type="button" data-bukken-filter="#bukken-top" data-type="" aria-pressed="true" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">すべて</button>
+                <button type="button" data-bukken-filter="#bukken-top" data-type="売買" aria-pressed="false" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">売買</button>
+                <button type="button" data-bukken-filter="#bukken-top" data-type="賃貸" aria-pressed="false" class="px-5 py-2 rounded-full border border-slate-300 bg-white text-sm font-bold text-slate-700 transition-colors">賃貸</button>
+            </div>
+            <div id="bukken-top" data-bukken-list data-limit="12" data-layout="scroll" data-mix="type"></div>
 
             <div class="mt-10 text-center">
                 <a href="bukken.html" class="inline-flex items-center justify-center px-8 py-4 bg-miyako hover:bg-miyako-dark text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all">
