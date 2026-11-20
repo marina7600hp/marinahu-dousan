@@ -278,18 +278,40 @@ function isCompanyPhoto_(u) {
   return /fudohsan\.jp\/m_img\//i.test(String(u || ''));
 }
 
-/** 物件番号入りの写真を優先して選ぶ（スマイミーは /img/物件番号/ が物件写真） */
+/**
+ * 写真を選ぶ
+ *   1. スマイミーは /img/物件番号/ の写真だけを対象にする（会社写真などを除く）
+ *   2. 説明文に「外観」があれば最優先。「間取」「図面」などは後回し
+ *   3. 白い部分が多い画像（間取り図・図面の可能性が高い）は後回し
+ *   4. 残りは大きい写真を優先
+ * candidates：{ s: URL, a: 表示サイズ, l: 説明文, w: 白っぽさ(0〜1, 不明は-1) } の配列
+ */
 function pickPhoto_(url, candidates, current) {
   let decoded = url;
   try { decoded = decodeURIComponent(url); } catch (e) { /* そのまま */ }
   const id = (decoded.match(/物件\/(\d+)/) || [])[1];
-  const ok = (u) => /^https:\/\//i.test(u) && !isCompanyPhoto_(u);
+  const ok = (c) => c && /^https:\/\//i.test(c.s) && !isCompanyPhoto_(c.s);
+  let list = candidates.filter(ok);
   if (id) {
-    const own = candidates.find((u) => ok(u) && u.indexOf('/' + id + '/') >= 0);
-    if (own) return own;
+    const own = list.filter((c) => c.s.indexOf('/' + id + '/') >= 0);
+    if (own.length) list = own;
   }
-  if (ok(current || '')) return current;
-  return candidates.find(ok) || '';
+  if (!list.length) return ok({ s: current || '' }) ? current : '';
+  const maxArea = Math.max.apply(null, list.map((c) => c.a || 0).concat([1]));
+  const score = (c, n) => {
+    const l = String(c.l || '');
+    let v = 0;
+    if (/外観|建物|全景|外 観/.test(l)) v += 100;
+    if (/間取|図面|区画|配置|地図|位置|案内図|周辺|公図|測量/.test(l)) v -= 100;
+    if (c.w >= 0.55) v -= 60;        // ほとんど白＝図面の可能性が高い
+    else if (c.w >= 0.4) v -= 20;
+    v += 10 * ((c.a || 0) / maxArea); // 大きい写真を少し優先
+    v -= n * 0.01;                     // 同点ならページ上で先に出てくる写真
+    return v;
+  };
+  let best = list[0], bestScore = -Infinity;
+  list.forEach((c, n) => { const v = score(c, n); if (v > bestScore) { bestScore = v; best = c; } });
+  return best.s;
 }
 
 /** og:image がないページ用：本文中の物件写真らしき画像を探す（SUUMOは rel / data-src に写真URLがある） */
@@ -328,14 +350,22 @@ function bookmarkletCode_(key) {
   const js = "(function(){"
     + "var h=location.hostname;"
     + "if(!/(^|\\.)(fudohsan\\.jp|suumo\\.jp)$/i.test(h)){alert('スマイミー（またはSUUMO）の物件ページを開いてから押してください');return;}"
-    + "var best='',bs=0,c=[];"
+    + "var best='',bs=0,c=[],seen={};"
     + "Array.prototype.forEach.call(document.images,function(i){var s=i.currentSrc||i.src||'';var w=i.naturalWidth||0,a=w*(i.naturalHeight||0);"
-    + "if(/^https:/.test(s)&&w>=150&&!/logo|icon|banner|btn|button|sprite|common|qr|map/i.test(s)){c.push([a,s]);if(a>bs){bs=a;best=s;}}});"
-    + "c.sort(function(x,y){return y[0]-x[0];});"
+    + "if(!/^https:/.test(s)||w<150||seen[s]||/logo|icon|banner|btn|button|sprite|common|qr|map/i.test(s))return;seen[s]=1;"
+    + "var l=(i.alt||'')+' '+(i.title||'');var p=i.closest('figure,li,td,dd,div');"
+    + "if(p){var q=p.querySelector('figcaption,.caption,p,span');l+=' '+((q&&q.textContent)||p.textContent||'').slice(0,60);}"
+    + "var wh=-1;try{var v=document.createElement('canvas');v.width=40;v.height=40;var x=v.getContext('2d');x.drawImage(i,0,0,40,40);"
+    + "var d=x.getImageData(0,0,40,40).data,n=0;for(var k=0;k<d.length;k+=4){if(d[k]>232&&d[k+1]>232&&d[k+2]>232)n++;}wh=Math.round(n/16)/100;}catch(e){}"
+    + "c.push({s:s,a:a,l:l.replace(/\\s+/g,' ').trim().slice(0,80),w:wh});if(a>bs){bs=a;best=s;}});"
+    + "Array.prototype.forEach.call(document.querySelectorAll('img[data-src],img[data-original],img[data-lazy],img[loading=lazy]'),function(i){"
+    + "if(i.naturalWidth)return;var s=i.getAttribute('data-src')||i.getAttribute('data-original')||i.getAttribute('data-lazy')||i.src||'';"
+    + "try{s=new URL(s,location.href).href;}catch(e){return;}if(!/^https:/.test(s)||seen[s])return;seen[s]=1;c.push({s:s,a:0,l:(i.alt||'').slice(0,80),w:-1});});"
+    + "c.sort(function(x,y){return y.a-x.a;});"
     + "var f=document.createElement('form');f.method='POST';f.action=" + JSON.stringify(WEBAPP_URL) + ";f.target='_blank';f.acceptCharset='UTF-8';f.style.display='none';"
     + "function add(n,v){var t=document.createElement('textarea');t.name=n;t.value=v;f.appendChild(t);}"
     + "add('action','add');add('key'," + JSON.stringify(key) + ");add('url',location.href);add('image',best);"
-    + "add('images',c.map(function(x){return x[1];}).filter(function(s,n,a){return a.indexOf(s)===n;}).slice(0,40).join('\\n'));"
+    + "add('cands',JSON.stringify(c.slice(0,40)));"
     + "add('head',document.head?document.head.outerHTML.slice(0,200000):'');"
     + "add('text',(document.body&&document.body.innerText||'').slice(0,300000));"
     + "document.body.appendChild(f);f.submit();setTimeout(function(){f.remove();},1000);"
@@ -379,8 +409,11 @@ function doPost(e) {
   try {
     const sheet = getSheet_();
     const info = parseListing_(String(p.head || ''), url, String(p.text || ''));
-    const candidates = String(p.images || '').split('\n').map((s) => s.trim()).filter(Boolean);
-    if (p.image) candidates.push(String(p.image));
+    let candidates = [];
+    try { candidates = JSON.parse(String(p.cands || '[]')); } catch (e) { candidates = []; }
+    if (!Array.isArray(candidates)) candidates = [];
+    String(p.images || '').split('\n').map((s) => s.trim()).filter(Boolean).forEach((s) => candidates.push({ s: s, a: 0, l: '', w: -1 }));
+    if (p.image) candidates.push({ s: String(p.image), a: 0, l: '', w: -1 });
     info.image = pickPhoto_(url, candidates, info.image);
     const row = findRowForUrl_(sheet, url);
     const isNew = String(sheet.getRange(row, COL.url).getValue()).trim() === '';
