@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers の設定（HPの配信と、スマイミー取得の中継）
+  "name": "marinahu-dousan",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  // 物件ページの取得先（日本のサイト）に近い場所で動かす設定
+  "placement": { "mode": "smart" }
+}

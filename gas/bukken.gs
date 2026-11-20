@@ -16,6 +16,11 @@ const SHEET_NAME = '物件一覧';
 const HEADERS = ['掲載URL', '公開', '種別', '物件名', '価格・賃料', '所在地', '間取り', '面積', '写真URL', 'ひとこと', '取得日時', '取得結果'];
 const COL = { url: 1, publish: 2, type: 3, title: 4, price: 5, address: 6, layout: 7, area: 8, image: 9, comment: 10, fetchedAt: 11, status: 12 };
 
+// スマイミー（fudohsan.jp）はGoogleのサーバーからの読み取りを受け付けないため、
+// HP（Cloudflare）に用意した中継を通して取得する
+const RELAY_URL = 'https://marinahu-dousan.marina-oomori1.workers.dev/api/fetch-page';
+const RELAY_HOSTS = /(^|\.)fudohsan\.jp$/i;
+
 /* ───────── メニュー ───────── */
 
 function onOpen() {
@@ -130,13 +135,22 @@ function fillRow_(sheet, row, overwrite) {
 }
 
 function fetchHtml_(url) {
-  const res = UrlFetchApp.fetch(url, {
+  const host = (url.match(/^https:\/\/([^\/?#]+)/i) || [])[1] || '';
+  const viaRelay = RELAY_HOSTS.test(host);
+  const fetchUrl = viaRelay ? RELAY_URL + '?url=' + encodeURIComponent(url) : url;
+  const res = UrlFetchApp.fetch(fetchUrl, {
     muteHttpExceptions: true,
     followRedirects: true,
     headers: { 'Accept-Language': 'ja,en;q=0.8' },
   });
   const code = res.getResponseCode();
-  if (code >= 400) throw new Error('ページを開けませんでした（' + code + '）');
+  if (code >= 400) {
+    if (viaRelay) {
+      const msg = String(res.getContentText() || '').slice(0, 80);
+      throw new Error('スマイミーのページを取得できませんでした（' + code + (msg ? '：' + msg : '') + '）');
+    }
+    throw new Error('ページを開けませんでした（' + code + '）');
+  }
   return decodeResponse_(res);
 }
 
